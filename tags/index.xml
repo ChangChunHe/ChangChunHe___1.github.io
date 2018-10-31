@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on My personal blog</title>
+    <link>/tags/</link>
+    <description>Recent content in Tags on My personal blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 28 Aug 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Band Structure</title>
+      <link>/tags/band-structure/</link>
+      <pubDate>Tue, 28 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/band-structure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Centeral Limit Theorem</title>
+      <link>/tags/centeral-limit-theorem/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/centeral-limit-theorem/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fourier Theory</title>
+      <link>/tags/fourier-theory/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/fourier-theory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gradient</title>
+      <link>/tags/gradient/</link>
+      <pubDate>Mon, 20 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/gradient/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hexo Theme</title>
+      <link>/tags/hexo-theme/</link>
+      <pubDate>Thu, 25 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/hexo-theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Io</title>
+      <link>/tags/io/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/io/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Machine Learning</title>
+      <link>/tags/machine-learning/</link>
+      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/machine-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matlab</title>
+      <link>/tags/matlab/</link>
+      <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/matlab/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Newton Method</title>
+      <link>/tags/newton-method/</link>
+      <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/newton-method/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>/tags/python/</link>
+      <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

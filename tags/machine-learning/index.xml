@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Machine Learning on My personal blog</title>
+    <link>/tags/machine-learning/</link>
+    <description>Recent content in Machine Learning on My personal blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 30 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/machine-learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>MATLAB制作2048game和auto-player (2)</title>
+      <link>/2018/09/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-2/</link>
+      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/09/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-2/</guid>
+      <description>&lt;p&gt;这一节先说说怎么写一个2048的GUI界面, 2048的规则很简单, 沿着某一个方向滑动可以将该方向上相同的数字合并.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MATLAB制作2048game和auto-player (1)</title>
+      <link>/2018/08/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-1/</link>
+      <pubDate>Thu, 30 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/08/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-1/</guid>
+      <description>这一系列的博客用于介绍如何使用MATLAB编写一个可以自动玩的2048game, 主要包括GUI的编写, 极大极小树的应用等等. 最终的效果如下图所示: 代码地址在这. 先大概介绍一下该游戏的基本功能, 点击Start可以开始游戏, Restart重新开始,空格键(space)也支持重新开始, 游戏通过方向键进行上下左右的移动. AI Player 可以召唤AI帮你玩游戏, Pause 键用于暂停AI玩游戏, Hint 是AI觉得应该如何移动, 会在上方提示.</description>
+    </item>
+    
+  </channel>
+</rss>

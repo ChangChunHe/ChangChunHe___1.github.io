@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tranquilpeak on My personal blog</title>
+    <link>/categories/tranquilpeak/</link>
+    <description>Recent content in Tranquilpeak on My personal blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/categories/tranquilpeak/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Welcome to Tranquilpeak 0.4.4-BETA</title>
+      <link>/2018/10/welcome-to-tranquilpeak-0.4.4-beta/</link>
+      <pubDate>Thu, 25 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/2018/10/welcome-to-tranquilpeak-0.4.4-beta/</guid>
+      <description>&lt;p&gt;This is a my blog based on &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt;, whose theme is &lt;a href=&#34;https://themes.gohugo.io/hugo-tranquilpeak-theme&#34;&gt;Tranquilpeak&lt;/a&gt;, here I present many thanks to the author &lt;a href=&#34;https://github.com/kakawait&#34;&gt;kakawait&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
