@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.49.2 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="author" content="ChangChun He">
+<meta name="keywords" content=", Physics, Mathematics, MATLAB, Python, VASP">
+<meta name="description" content="这一节我们来使用牛顿法做优化, 之前在一维搜索方法中提到过牛顿法, 即为使用二次函数来近似某点周围的函数, 从而达到简化问题的效果. 本节也是通过类似的方法来实现函数的极值的求解的.
+
+">
+
+
+<meta property="og:description" content="这一节我们来使用牛顿法做优化, 之前在一维搜索方法中提到过牛顿法, 即为使用二次函数来近似某点周围的函数, 从而达到简化问题的效果. 本节也是通过类似的方法来实现函数的极值的求解的.
+
+">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛顿法求解极小值">
+<meta name="twitter:title" content="牛顿法求解极小值">
+<meta property="og:url" content="/2018/08/%E7%89%9B%E9%A1%BF%E6%B3%95%E6%B1%82%E8%A7%A3%E6%9E%81%E5%B0%8F%E5%80%BC/">
+<meta property="twitter:url" content="/2018/08/%E7%89%9B%E9%A1%BF%E6%B3%95%E6%B1%82%E8%A7%A3%E6%9E%81%E5%B0%8F%E5%80%BC/">
+<meta property="og:site_name" content="My personal blog">
+<meta property="og:description" content="这一节我们来使用牛顿法做优化, 之前在一维搜索方法中提到过牛顿法, 即为使用二次函数来近似某点周围的函数, 从而达到简化问题的效果. 本节也是通过类似的方法来实现函数的极值的求解的.
+
+">
+<meta name="twitter:description" content="这一节我们来使用牛顿法做优化, 之前在一维搜索方法中提到过牛顿法, 即为使用二次函数来近似某点周围的函数, 从而达到简化问题的效果. 本节也是通过类似的方法来实现函数的极值的求解的.
+
+">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2018-08-25T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2018-08-25T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="optimization">
+    
+  
+  
+    
+      <meta property="article:tag" content="python">
+    
+      <meta property="article:tag" content="Newton method">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dew_by_Aaron_Burden.jpg">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dew_by_Aaron_Burden.jpg">
+
+
+    <title>牛顿法求解极小值</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="/2018/08/%E7%89%9B%E9%A1%BF%E6%B3%95%E6%B1%82%E8%A7%A3%E6%9E%81%E5%B0%8F%E5%80%BC/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-nnm2spxvve8onlujjlegkkytaehyadd4ksxc1hyzzq9a2wvtrgbljqyulomn.min.css" />
+    
+    
+
+    
+      
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="4">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">My personal blog</a>
+  </div>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="4">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dew_by_Aaron_Burden.jpg" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">ChangChun He</h4>
+        
+          <h5 class="sidebar-profile-bio">没有对象的野指针</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/ChangChunHe">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://stackoverflow.com">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+      
+      <span class="sidebar-button-desc">Stack Overflow</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://shaobinqiu.github.io/">
+    
+      <i class="sidebar-button-icon  fa fa-bolt"></i>
+      
+      <span class="sidebar-button-desc">Qiusb</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="http://morty.tech/">
+    
+      <i class="sidebar-button-icon  fa fa-bomb"></i>
+      
+      <span class="sidebar-button-desc">Yujs</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="4"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      牛顿法求解极小值
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2018-08-25T00:00:00Z">
+        
+  August 25, 2018
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/optimization">optimization</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>这一节我们来使用牛顿法做优化, 之前在一维搜索方法中提到过牛顿法, 即为使用二次函数来近似某点周围的函数, 从而达到简化问题的效果. 本节也是通过类似的方法来实现函数的极值的求解的.</p>
+
+<p></p>
+
+<p>假定有一个函数 \(f = f(x)\), 在 \(x = x_0 \)处用泰勒展开有</p>
+
+<p>$$f(x) \sim f(x_0) + (x - x_0)^{T} g(x_0)  + \frac{1}{2} (x - x_0)^{T}D(x_0)(x-x_0) = p(x)$$</p>
+
+<p>我们将在这里将\(f(x)\)在\(x_0\)附近近似为\(p(x)\), 所以只需要求出\(p(x)\)的极值即可近似求解出\(f(x)\)的极值.</p>
+
+<p>这里我们求解\(p(x)\)的梯度等于零, 有</p>
+
+<p>$$\nabla p(x) = g(x_0) + D(x_0)(x-x_0) = 0$$</p>
+
+<p>从而容易得出迭代公式</p>
+
+<p>$$ x_ {k+1 } = x_{ k } - D(x_k)^{-1} g(x_k)$$</p>
+
+<p>下面举一个例子, 对于一个正定二次型函数 $$f(x) = x^{2} + 100y^{2}+ xy$$
+梯度为 $$g(x) = (2x +y, 200y+x)^{T}$$
+Hessian 矩阵为 $$H = [2,1;1,200]$$</p>
+
+<pre><code class="language-python">import numpy as np
+def Newton_method(g, H, init_point):
+    path = [init_point.reshape((len(g),))]
+    g_val = np.array([g[i](*init_point) for i in range(len(g))])
+    g_val = np.reshape(g_val, (len(g), 1))
+    while  np.sum(abs(g_val), axis=0)[0]&gt; 0.01:
+        init_point = init_point - np.dot(np.linalg.inv(H), g_val)
+        g_val = np.array([g[i](*init_point) for i in range(len(g))])
+        g_val = np.reshape(g_val, (len(g), 1))
+        path.append(init_point.reshape((len(g),)))
+    return init_point, path
+
+if __name__ == &quot;__main__&quot;:
+    f = lambda x, y:x**2+100*y**2+x*y
+    g = [lambda x, y:2*x+y, lambda x, y:200*y+x];
+    H = np.array([[2,1], [1, 200]])
+    init_point = np.array([100,1]).reshape((2,1))
+    point, path = Newton_method(g, H, init_point)
+    print('Final point:', point, '\n and the path is:\n', path)
+</code></pre>
+
+<pre><code>Final point: [[0.]
+ [0.]]
+ and the path is:
+ [array([100,   1]), array([0., 0.])]
+</code></pre>
+
+<p>这里可以看到, 在二次型函数上, 牛顿法可以一步达到极小值点, 这也是很显然的, 因为牛顿法近似拟合的函数是可以得到它的极小值, 而牛顿法对于二次型函数的拟合就是原函数.</p>
+
+<p>对于非二次型函数, 例如Powell函数</p>
+
+<p>$$f = (x_1+10x_2)^{2} + 5(x_3 - x_4)^{2} + (x_2-2x_3)^{4} + 10(x_1-x_4)^{4}$$</p>
+
+<p>设置起始点为 \(x = [3, -1, 0, 1]^{T}\).</p>
+
+<p>梯度为</p>
+
+<p>$$g = [2(x_1+10x_2)^{2}, 20(x_1+10x_2)+4(x_2-2x_3)^{3},\\ 10(x_3-x_4)-8(x_2-2x_3)^{3},
+-10(x_3-x_4)-40(x_1-x_4)^{3}]$$</p>
+
+<p>Hessian 矩阵过于复杂这里就不写了&hellip;, 详情见下面的代码&hellip;</p>
+
+<!-- $$
+ H = \left[
+ \begin{matrix}
+   2+120(x_1-x_4)^{2} & 20 & 0 &-120(x_1-x_4)^{2} \\\ 20 & 200+12(x_2-2x_3)^{2} & -24(x_2-2x_{3})^{2} &0 \\\ 0 & -24(x_2-2x_3)^{2} & 10+48(x_2-2x_3)^{2} &-10\\\ -120(x_1-x_4)^2 & 0 &-10 & 10+120(x_1-x_4)^{2}
+  \end{matrix}
+  \right]
+$$ -->
+
+<pre><code class="language-python">import numpy as np
+def Newton_method_std(g, H, init_point):
+    path = [init_point.reshape((len(g),))]
+    g_val = np.array([g[i](*init_point) for i in range(len(g))]).reshape((len(g), 1))
+    while  np.sum(abs(g_val), axis=0)[0]&gt; 0.0001:
+        H_val = np.zeros((len(g), len(g)))
+        for ii in range(len(g)):
+            for jj in range(len(g)):
+                H_val[ii, jj] = H[ii][jj](*init_point)
+        init_point = init_point - np.dot(np.linalg.inv(H_val), g_val)
+        g_val = np.array([g[i](*init_point) for i in range(len(g))]).reshape((len(g), 1))
+        path.append(init_point.reshape((len(g),)))
+    return init_point, path
+
+
+if __name__ == &quot;__main__&quot;:
+    f = lambda x1,x2,x3,x4:(x1+10*x2)**2+5*(x3-x4)**2+
+        (x2-2*x3)**4+10*(x1-x4)**4
+    g = [lambda x1,x2,x3,x4:2*(x1+10*x2)+40*(x1-x4)**3,
+         lambda x1,x2,x3,x4:20*(x1+10*x2)+4*(x2-2*x3)**3,
+         lambda x1,x2,x3,x4:10*(x3-x4)-8*(x2-2*x3)**3,
+         lambda x1,x2,x3,x4:-10*(x3-x4)-40*(x1-x4)**3];
+    H = [[lambda x1,x2,x3,x4:2+120*(x1-x4)**2,lambda x1,x2,x3,x4:20,
+          lambda x1,x2,x3,x4:0,lambda x1,x2,x3,x4:-120*(x1-x4)**2],
+         [lambda x1,x2,x3,x4:20,lambda x1,x2,x3,x4:200+12*(x2-2*x3)**2,
+          lambda x1,x2,x3,x4:-24*(x2-2*x3)**2,lambda x1,x2,x3,x4:0],
+         [lambda x1,x2,x3,x4:0, lambda x1,x2,x3,x4:-24*(x2-2*x3)**2,
+          lambda x1,x2,x3,x4:10+48*(x2-2*x3)**2,lambda x1,x2,x3,x4:-10],
+        [lambda x1,x2,x3,x4:-120*(x1-x4)**2,lambda x1,x2,x3,x4:0,
+          lambda x1,x2,x3,x4:-10,lambda x1,x2,x3,x4:10+120*(x1-x4)**2]]
+    init_point = np.array([3, -1, 0, 1]).reshape((4,1))
+    point, path = Newton_method_std(g, H, init_point)
+    print('Final point:\n', point, '\nthe minmum function value is:\n',
+          f(*point), '\n and the time of iteration is:', len(path))
+</code></pre>
+
+<pre><code>Final point:
+ [[ 0.01223388]
+ [-0.00122339]
+ [ 0.00195742]
+ [ 0.00195742]]
+the minmum function value is:
+ [1.1222262e-07]
+ and the time of iteration is: 14
+</code></pre>
+
+<p>可以看到牛顿法的收敛速度是相当快速的, 但是这里同样的代价是求解的复杂度也变高了. 第一, 需要计算Hessian矩阵, 第二, 需要计算该矩阵的逆. 这二者都需要花费较大的代价. 因此我们需要有一些更好的方法进行改进. 同时更重要滴, 有时候Hessian矩阵并不可以使得搜索方向的目标函数下降的方向. 一般该种情况出现在Hessian矩阵非正定的时候, 但是有时候即使正定也会导致该种情况的出现, 而且有时候Hessian矩阵可能接近奇异, 导致其逆矩阵求解误差很大. 关于这一点, 我们可以通过LM方法来修正并改善牛顿法.</p>
+
+<h2 id="levenberg-marquardt-修正">Levenberg-Marquardt 修正</h2>
+
+<p>这里是实质上就引入了矩阵的对角元的修正, 也即为将把迭代公式修正为</p>
+
+<p>$$x_ {k+1} = x_k - (D_k+\mu_k I)^{-1}g_k$$</p>
+
+<p>这里如果\( \mu_k\)足够大, 就可以使得\(G = D_k+\mu_k I\)为正定矩阵, 并且当\( \mu_k \)很大时, 该方法也即为梯度下降法, 而当\( \mu_k\)趋于零时, 该方法仍然为牛顿法. 因此平衡好\(\mu_k\)的取值将非常重要. 一般为, 先取\( \mu_k\)很小, 然后慢慢变大, 直到出现下降特性为止.</p>
+
+<p>考虑一种特殊的优化问题, 并尝试使用牛顿法解决. 优化问题为:</p>
+
+<p>$$\min f, f =  \sum_{i = 1}^{m}r_i(\vec{x})^{2}$$</p>
+
+<p>其中\(r_i: R^{n}\rightarrow R, i = 1,2,3&hellip;m\). 该种问题称为非线性的的最小二乘法问题.</p>
+
+<p>这里考虑该问题的解决方法. 首先求解\(f\)的梯度, 也即为</p>
+
+<p>$$ g(x_ j) = 2\sum_ {i=1 }^{m}\frac{\partial r_i}{\partial x_j} $$</p>
+
+<p>如果我们引入雅克比矩阵, 可以得出
+$$g = 2J^{T}r$$
+而Hessian矩阵的第j行第k列, 也即为也即为</p>
+
+<p>$$H(j, k) = \frac{\partial^{2} f}{\partial x_j \partial x_k} $$</p>
+
+<p>$$= \frac{\partial }{\partial x_ j}(\sum_ { i=1 }^{m} 2r_i \frac{\partial r_i}{\partial x_k})$$</p>
+
+<p>$$=2\sum_ { i=1 }^{m}(\frac{\partial r_i}{\partial x_j}\frac{\partial r_i}{\partial x_k} + r_i\frac{\partial^{2}r_i}{\partial x_j\partial x_k})$$</p>
+
+<p>写成矩阵的形式也即为</p>
+
+<p>$$H = 2(J^{T}J+S)$$</p>
+
+<p>其中\(S\)的矩阵元为 \(r_i \frac{\partial^{2} r_i}{\partial x_j \partial x_k}\)
+ 但是一般来说, \(S\)的矩阵元很小(由于二阶偏导数的缘故), 所以我们可以舍去, 那么该问题也即为转化为</p>
+
+<p>$$x_{ k+1 } = x_k - (J^{T}J)^{-1}J^{T}r_k$$</p>
+
+<p>该公式也即为所谓的高斯-牛顿法. 注意到该方法不需要计算二阶导数. 但是实际上可能会碰到\(J^{T}J\)不正定的问题, 使用LM修正将会是一个很好的方法.事实上该方法的提出正是为了解决\(J^{T}J\)不正定的问题.</p>
+
+<p>$$x_ {k+1} = x_k - (J^{T}J + \mu_kI)^{-1}J^{T}r_k$$</p>
+
+<p>下面我们举一个拟合正弦函数的例子</p>
+
+<pre><code class="language-python">n = 21
+t = np.linspace(0, 2*np.pi, n)
+rand_ = 0.1*np.random.rand(n)
+y = 6*np.sin(t+0.5)+rand_# 这是我们设置好的参数
+</code></pre>
+
+<p>这里要拟合的函数为</p>
+
+<p>$$y = x_{1}\sin(x_2t+x_3)$$</p>
+
+<p>因此我们有</p>
+
+<p>$$\frac{\partial r}{\partial x_1} = \sin(x_2t+x_3)$$</p>
+
+<p>$$\frac{\partial y}{\partial x_2}= x_1t\cos(x_2t+x_3)$$</p>
+
+<p>$$\frac{\partial y}{\partial x_3} = x_1\cos(x_2t+x_3)$$</p>
+
+<pre><code class="language-python">x = np.array([1, 1, 1]).reshape((3,1))
+g_r0 = lambda x1,x2,x3,t:-np.sin(x2*t+x3)
+g_r1 = lambda x1,x2,x3,t:-x1*t*np.cos(x2*t+x3)
+g_r2 = lambda x1,x2,x3,t:-x1*np.cos(x2*t+x3)
+y_fun = lambda x1,x2,x3,t:x1*np.sin(x2*t+x3)
+step = 0.1
+for it in range(100):
+    J, r = np.zeros((n, 3)), np.zeros((n, 1))
+    for ii in range(n):
+        J[ii, 0], J[ii,1], J[ii, 2] = g_r0(*x, t=t[ii]), g_r1(*x, t=t[ii]), g_r2(*x, t=t[ii])
+        r[ii] = y[ii] - y_fun(*x, t=t[ii])
+        tmp = np.dot(J.T, J)
+        mu = 0.1
+    x = x - step*np.dot(np.dot(np.linalg.inv(tmp+mu*np.diag([1,1,1])), J.T), r)
+    yy = np.sum(abs(r))
+    if yy&lt;1:
+        break
+print(x)
+</code></pre>
+
+<pre><code>[[5.96004711]
+ [1.00227016]
+ [0.49446075]]
+</code></pre>
+
+<pre><code class="language-python">%matplotlib inline
+import matplotlib.pyplot as plt
+plt.plot(t, y,'o',label='original data')
+plt.plot(t, y.reshape((n,1))-r, label='fitting')
+plt.legend()
+plt.show()
+# 可以看到, 牛顿法给出的拟合效果是很好的.
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/output_15_0.png" alt="png" /></p>
+
+<p>最后我们将此方法整理一下, 因为牛顿法可能有时候会不收敛, 所以引入一个步长将会是很好的选择. 也即为我们可以把牛顿法修正为</p>
+
+<p>$$x_ {k+1} = x_k - \alpha_kD^{-1}_kg_k$$</p>
+
+<p>其中$$\alpha_k = argmin~~f( x_k - \alpha D^{-1}_kg_k)$$
+也即为对\(\alpha\) 展开一维搜索.</p>
+
+<h2 id="高斯-牛顿法">高斯-牛顿法</h2>
+
+<p>借助之前的一维搜索方法, 这里选取黄金分割法进行一维搜索.</p>
+
+<pre><code class="language-python">import numpy as np
+
+class OneDOptAlgo(object):
+
+    def __init__(self, f, except_inter=1e-3):
+        self.f = f # here f is a one dimension function
+        self.except_inter = except_inter
+
+    def golden_division(self, inter):
+        &quot;&quot;&quot;
+        f is the given function, iter is the interval that variable belongs to
+        and err is the error you can tolerate
+        &quot;&quot;&quot;
+        rho = (3 - np.sqrt(5))/2
+        old_inter = abs(inter[0]- inter[1])
+        while old_inter &gt; self.except_inter:
+            interval = inter[1] - inter[0]
+            new_inter_0 = inter[0] + rho*interval
+            new_inter_1 = inter[0] + (1 - rho)*interval
+            if self.f(new_inter_0) &lt; self.f(new_inter_1):
+                inter = [inter[0], new_inter_1]
+            else:
+                inter = [new_inter_0, inter[1]]
+            old_inter = abs(inter[0] - inter[1])
+        return inter
+</code></pre>
+
+<p>这里加入对步长step的一维搜索, 上面的代码是直接设置的0.1</p>
+
+<pre><code class="language-python">def get_step(step):
+    x = old_x - step*np.dot(np.dot(np.linalg.inv(tmp+mu*np.diag([1,1,1])), J.T), r)
+    new_r = np.zeros((n, 1))
+    for ii in range(n):
+        new_r[ii] = y[ii] - y_fun(*x, t=t[ii])
+    err = np.sum(abs(new_r))
+    return err
+
+n = 20
+t = np.linspace(0, 2*np.pi, n)
+rand_ = 0.1*np.random.rand(n)
+y = 8*np.sin(2*t+2.5)+rand_# 这是我们设置好的参数
+
+old_x = np.array([1, 1, 1]).reshape((3,1))
+g_r0 = lambda x1,x2,x3,t:-np.sin(x2*t+x3)
+g_r1 = lambda x1,x2,x3,t:-x1*t*np.cos(x2*t+x3)
+g_r2 = lambda x1,x2,x3,t:-x1*np.cos(x2*t+x3)
+y_fun = lambda x1,x2,x3,t:x1*np.sin(x2*t+x3)
+
+for it in range(100):
+    J, r = np.zeros((n, 3)), np.zeros((n, 1))
+    for ii in range(n):
+        J[ii, 0], J[ii,1], J[ii, 2] = g_r0(*old_x, t=t[ii]), g_r1(*old_x, t=t[ii]), g_r2(*old_x, t=t[ii])
+        r[iioutput_22_0.png] = y[ii] - y_fun(*old_x, t=t[ii])
+        tmp = np.dot(J.T, J)
+        mu = 0.1
+    # one-D search for the optimum step
+    inter = [0, 1]
+    opt_inter = OneDOptAlgo(get_step, except_inter=1e-1).golden_division(inter)
+    old_x = old_x - opt_inter[0]*np.dot(np.dot(np.linalg.inv(tmp+mu*np.diag([1,1,1])), J.T), r)
+    if sum(abs(r)) &lt; 1.5:
+        break
+
+
+print('coef_:\n', old_x, '\nerr:\n', sum(abs(r)))
+</code></pre>
+
+<pre><code>coef_:
+[[ 7.99322081]
+[ 2.00044926]
+[-3.78607497]]
+err:
+[1.00282415]
+</code></pre>
+
+<pre><code class="language-python">plt.plot(t, y,'o',label='original data')
+plt.plot(t, y.reshape((n,1))-r, label='fitting')
+plt.legend()
+plt.show()
+</code></pre>
+
+<p><img src="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/output_22_0.png" alt="png" /></p>
+
+<p>这里不得不提及, 牛顿法的收敛性是不好的. 即便Hessian矩阵是正定的, 也可能会出现不收敛的情况.</p>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/python/">python</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/newton-method/">Newton method</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/08/iteration_fractal/" data-tooltip="分形理论">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/08/%E4%B8%89%E7%BB%B4%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8F%92%E5%80%BC%E6%96%B9%E6%B3%95/" data-tooltip="三维曲线的插值方法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2018 ChangChun He. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/08/iteration_fractal/" data-tooltip="分形理论">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/08/%E4%B8%89%E7%BB%B4%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8F%92%E5%80%BC%E6%96%B9%E6%B3%95/" data-tooltip="三维曲线的插值方法">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    <pre><code class="matlab">
+      <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/8.0/styles/github.min.css">
+      <script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+    </code></pre>
+    <script type="text/javascript" color="0,0,205" opacity='0.7' zIndex="-2" count="99"
+    	src="https://cdn.bootcss.com/canvas-nest.js/2.0.3/canvas-nest.js"></script>
+    
+
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dew_by_Aaron_Burden.jpg" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">ChangChun He</h4>
+    
+      <div id="about-card-bio">没有对象的野指针</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Student
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        China-GuangZou
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="Search" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center">no post found</div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/11/welcome-to-tranquilpeak-0.4.4-beta/">
+                <h3 class="media-heading">Welcome to Tranquilpeak 0.4.4-BETA</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>This is a my blog based on <a href="https://gohugo.io/">hugo</a>, whose theme is <a href="https://themes.gohugo.io/hugo-tranquilpeak-theme">Tranquilpeak</a>, here I present many thanks to the author <a href="https://github.com/kakawait">kakawait</a>.</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/10/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-3/">
+                <h3 class="media-heading">MATLAB制作2048game和auto-player (3)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>这一节讲述如何写出一个会自动玩的<code>AI-player</code>. 先以棋类游戏为例, 我们下棋都会思考每一步下到哪是最好的? 而且更厉害的棋手会想到接下来的几步的局面将会想何处发展,  自己应该下哪一步才可以让自己的局势是最好的. 这是最朴素也是最好用的方法.</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/10/%E4%BB%8E%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%88%B0runge-kutta%E6%B3%95/">
+                <h3 class="media-heading">从中值定理到Runge-Kutta法</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Oct 10, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>对于一个一阶线性微分方程，</p>
+
+<p>$$\frac{dy}{dx} = f(x, y)$$</p>
+
+<p>给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
+</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/09/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-2/">
+                <h3 class="media-heading">MATLAB制作2048game和auto-player (2)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Sep 9, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>这一节先说说怎么写一个2048的GUI界面, 2048的规则很简单, 沿着某一个方向滑动可以将该方向上相同的数字合并.</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/08/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-1/">
+                <h3 class="media-heading">MATLAB制作2048game和auto-player (1)</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">这一系列的博客用于介绍如何使用MATLAB编写一个可以自动玩的2048game, 主要包括GUI的编写, 极大极小树的应用等等. 最终的效果如下图所示: 代码地址在这. 先大概介绍一下该游戏的基本功能, 点击Start可以开始游戏, Restart重新开始,空格键(space)也支持重新开始, 游戏通过方向键进行上下左右的移动. AI Player 可以召唤AI帮你玩游戏, Pause 键用于暂停AI玩游戏, Hint 是AI觉得应该如何移动, 会在上方提示.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/08/tight-binding-model/">
+                <h3 class="media-heading">Tight binding model</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/08/iteration_fractal/">
+                <h3 class="media-heading">分形理论</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>分形简单来说就是具有自相似性质的图形, 其Hausdorff 维度一般来说是分数的, 与常规认知的维度不同.
+我虽然很早就接触过分形, 但是并没有画过分形的图, 这里写一下画分形的代码&hellip;先介绍一个简单的分形图形, 再说说经典的Julia集合, Kuch 雪花曲线等等</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/08/%E7%89%9B%E9%A1%BF%E6%B3%95%E6%B1%82%E8%A7%A3%E6%9E%81%E5%B0%8F%E5%80%BC/">
+                <h3 class="media-heading">牛顿法求解极小值</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>这一节我们来使用牛顿法做优化, 之前在一维搜索方法中提到过牛顿法, 即为使用二次函数来近似某点周围的函数, 从而达到简化问题的效果. 本节也是通过类似的方法来实现函数的极值的求解的.</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/08/%E4%B8%89%E7%BB%B4%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8F%92%E5%80%BC%E6%96%B9%E6%B3%95/">
+                <h3 class="media-heading">三维曲线的插值方法</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>一般而言, 二元函数或者曲面面的插值maltab已经有很强大的库函数了, 例如三次样条插值<code>spline</code>, 曲面插值<code>interp, interp2, griddata</code>等等. 但是对于一组三维曲线的拟合似乎并没有很好的函数可以解决这个问题, 本文简单介绍一下我的方法.</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2018/08/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B0%E6%9E%81%E5%B0%8F%E5%80%BC-1/">
+                <h3 class="media-heading">梯度下降法求解函数极小值-1</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Aug 8, 2018
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"><p>我们知道, 函数沿着负梯度方向下降是最快的, 因此利用梯度下降法是计算函数极小值的常用的方法.因此如果我们确定一个初始点\(x_0\), 那么利用迭代公式:</p>
+
+<p>$$x_{k+1} = x_k - \alpha_k \nabla f(x_k) $$</p>
+
+<p>其中\(\alpha_k\)为步长.</p>
+
+<p></p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero="no post found"
+         data-message-one="1 post found"
+         data-message-other="{n} posts found">
+         14 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Mushroom_by_Barroso_Parejo.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+
+    <script src="/js/math-code.js"></script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    "HTML-CSS": {
+      availableFonts : ["STIX"],
+      preferredFont : "STIX",
+      webFont : "STIX-Web",
+      imageFont : null
+    }
+  });
+</script>
+
+<style>
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  background-color: 	#4169E1;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #555;
+}
+</style>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        document.getElementById("myBtn").style.display = "block";
+    } else {
+        document.getElementById("myBtn").style.display = "none";
+    }
+}
+
+
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
+</script>
+
+  </body>
+  <script type="text/javascript" color="199,21,133" opacity='1' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+</html>
+
