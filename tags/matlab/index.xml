@@ -17,9 +17,7 @@
       <pubDate>Tue, 30 Oct 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/10/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-3/</guid>
-      <description>&lt;p&gt;这一节讲述如何写出一个会自动玩的&lt;code&gt;AI-player&lt;/code&gt;. 先以棋类游戏为例, 我们下棋都会思考每一步下到哪是最好的? 而且更厉害的棋手会想到接下来的几步的局面将会想何处发展,  自己应该下哪一步才可以让自己的局势是最好的. 这是最朴素也是最好用的方法.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;这一节讲述如何写出一个会自动玩的&lt;code&gt;AI-player&lt;/code&gt;. 先以棋类游戏为例, 我们下棋都会思考每一步下到哪是最好的? 而且更厉害的棋手会想到接下来的几步的局面将会想何处发展,  自己应该下哪一步才可以让自己的局势是最好的. 这是最朴素也是最好用的方法.&lt;/p&gt;</description>
     </item>
     
     <item>
