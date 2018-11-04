@@ -21,7 +21,7 @@
 <meta name="twitter:title" content="MATLAB制作2048game和auto-player (3)">
 <meta property="og:url" content="/2018/10/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-3/">
 <meta property="twitter:url" content="/2018/10/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-3/">
-<meta property="og:site_name" content="My personal blog">
+<meta property="og:site_name" content="">
 <meta property="og:description" content="这一节讲述如何写出一个会自动玩的AI-player. 先以棋类游戏为例, 我们下棋都会思考每一步下到哪是最好的? 而且更厉害的棋手会想到接下来的几步的局面将会想何处发展,  自己应该下哪一步才可以让自己的局势是最好的. 这是最朴素也是最好用的方法.
 
 ">
@@ -99,7 +99,7 @@
       <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="/">My personal blog</a>
+    <a class="header-title-link" href="/"></a>
   </div>
   
 </header>
@@ -270,7 +270,9 @@
 
 <p>这个结论是如何得到的呢? 最直白的回答是, 把所有的情形都列举出来,就像下面这样:</p>
 
-<p><img src="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/tic_tac_toe.png" alt="" /></p>
+<p><img src="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Tic-tac-toe-full-game-tree-x-rational.jpg" alt="" /></p>
+
+<p>因为所有的下法都被我们列举出来了, 之后所有的情况都是已知的, 只需要查表就可以知道下一步应该下到哪是对自己最为有利的. 由于这是一个很简单的游戏，我们可以列举出所有的情形, 但是实际上大多数的游戏是无法穷举的, 因为样本空间太大 了. 例如五子棋, 象棋, 围棋等等使用穷举是不可能的事情, 所以我们需要更加聪明的方法来实现计算机的对奕.</p>
               
             </div>
           </div>
@@ -470,7 +472,7 @@
                   Nov 11, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>My personal  blog based on  <a href="https://themes.gohugo.io/hugo-tranquilpeak-theme">Tranquilpeak</a> whose author is <a href="https://github.com/kakawait">kakawait</a>.</p>
+              <div class="media-content hide-xs font-merryweather"><p>My personal  blog based on  the <a href="https://gohugo.io/">hugo</a> theme <a href="https://themes.gohugo.io/hugo-tranquilpeak-theme">Tranquilpeak</a>, whose author is <a href="https://github.com/kakawait">kakawait</a>.</p>
 
 <p></p></div>
             </div>
@@ -510,7 +512,7 @@
               </span>
               <div class="media-content hide-xs font-merryweather"><p>对于一个一阶线性微分方程，</p>
 
-<p>$$\frac{dy}{dx} = f(x, y)$$</p>
+<p>$$\frac{dy}{dx} = f(x, y), x \in (x_{start}, x_{end})$$</p>
 
 <p>给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
 </p></div>
@@ -777,6 +779,6 @@ function topFunction() {
 </script>
 
   </body>
-  <script type="text/javascript" color="199,21,133" opacity='1' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  <script type="text/javascript" color="0,0,0" opacity='1' zIndex="-1" count="199" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 </html>
 

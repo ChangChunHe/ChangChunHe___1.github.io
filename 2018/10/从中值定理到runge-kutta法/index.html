@@ -10,7 +10,7 @@
 <meta name="keywords" content=", Physics, Mathematics, MATLAB, Python, VASP">
 <meta name="description" content="对于一个一阶线性微分方程，
 
-$$\frac{dy}{dx} = f(x, y)$$
+$$\frac{dy}{dx} = f(x, y), x \in (x_{start}, x_{end})$$
 
 给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
 ">
@@ -18,7 +18,7 @@ $$\frac{dy}{dx} = f(x, y)$$
 
 <meta property="og:description" content="对于一个一阶线性微分方程，
 
-$$\frac{dy}{dx} = f(x, y)$$
+$$\frac{dy}{dx} = f(x, y), x \in (x_{start}, x_{end})$$
 
 给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
 ">
@@ -27,16 +27,16 @@ $$\frac{dy}{dx} = f(x, y)$$
 <meta name="twitter:title" content="从中值定理到Runge-Kutta法">
 <meta property="og:url" content="/2018/10/%E4%BB%8E%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%88%B0runge-kutta%E6%B3%95/">
 <meta property="twitter:url" content="/2018/10/%E4%BB%8E%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%88%B0runge-kutta%E6%B3%95/">
-<meta property="og:site_name" content="My personal blog">
+<meta property="og:site_name" content="">
 <meta property="og:description" content="对于一个一阶线性微分方程，
 
-$$\frac{dy}{dx} = f(x, y)$$
+$$\frac{dy}{dx} = f(x, y), x \in (x_{start}, x_{end})$$
 
 给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
 ">
 <meta name="twitter:description" content="对于一个一阶线性微分方程，
 
-$$\frac{dy}{dx} = f(x, y)$$
+$$\frac{dy}{dx} = f(x, y), x \in (x_{start}, x_{end})$$
 
 给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
 ">
@@ -111,7 +111,7 @@ $$\frac{dy}{dx} = f(x, y)$$
       <header id="header" data-behavior="4">
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
-    <a class="header-title-link" href="/">My personal blog</a>
+    <a class="header-title-link" href="/"></a>
   </div>
   
 </header>
@@ -277,7 +277,7 @@ $$\frac{dy}{dx} = f(x, y)$$
             <div class="main-content-wrap">
               <p>对于一个一阶线性微分方程，</p>
 
-<p>$$\frac{dy}{dx} = f(x, y)$$</p>
+<p>$$\frac{dy}{dx} = f(x, y), x \in (x_{start}, x_{end})$$</p>
 
 <p>给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
 </p>
@@ -288,7 +288,13 @@ $$\frac{dy}{dx} = f(x, y)$$
 
 <p>$$\frac{dy}{dx} \sim \frac{y_{n+1}-y_n}{x_{n+1} - x_n}=f(x_n,y_n)$$</p>
 
-<p>写成上面这种形式似乎就已经可以得出一个递推公式进而求解</p>
+<p>写成上面这种形式似乎就已经可以得出一个递推公式进而求解, 那就是</p>
+
+<p>$$y_{n+1} = y_n + (x_{n+1} - x_n)f(x_n,y_n) = F(x_n, x_{n+1}, y_n)$$</p>
+
+<p>如此递推就可以从初始值开始推出给定区间上的一系列离散的函数值了. 但是考虑到精度的问题, 这种使用差分替换掉微分的方式是很粗糙的, 应该可以使用更高阶的方法来降低误差.</p>
+
+<p>下面用图形形象地表达上式的几何意义.</p>
 
 <h3 id="微分中值定理">微分中值定理</h3>
               
@@ -488,7 +494,7 @@ $$\frac{dy}{dx} = f(x, y)$$
                   Nov 11, 2018
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather"><p>My personal  blog based on  <a href="https://themes.gohugo.io/hugo-tranquilpeak-theme">Tranquilpeak</a> whose author is <a href="https://github.com/kakawait">kakawait</a>.</p>
+              <div class="media-content hide-xs font-merryweather"><p>My personal  blog based on  the <a href="https://gohugo.io/">hugo</a> theme <a href="https://themes.gohugo.io/hugo-tranquilpeak-theme">Tranquilpeak</a>, whose author is <a href="https://github.com/kakawait">kakawait</a>.</p>
 
 <p></p></div>
             </div>
@@ -528,7 +534,7 @@ $$\frac{dy}{dx} = f(x, y)$$
               </span>
               <div class="media-content hide-xs font-merryweather"><p>对于一个一阶线性微分方程，</p>
 
-<p>$$\frac{dy}{dx} = f(x, y)$$</p>
+<p>$$\frac{dy}{dx} = f(x, y), x \in (x_{start}, x_{end})$$</p>
 
 <p>给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
 </p></div>
@@ -795,6 +801,6 @@ function topFunction() {
 </script>
 
   </body>
-  <script type="text/javascript" color="199,21,133" opacity='1' zIndex="-1" count="99" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  <script type="text/javascript" color="0,0,0" opacity='1' zIndex="-1" count="199" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
 </html>
 

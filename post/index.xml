@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on My personal blog</title>
+    <title>Posts on </title>
     <link>/post/</link>
-    <description>Recent content in Posts on My personal blog</description>
+    <description>Recent content in Posts on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/11/welcome-to-tranquilpeak-0.4.4-beta/</guid>
-      <description>&lt;p&gt;My personal  blog based on  &lt;a href=&#34;https://themes.gohugo.io/hugo-tranquilpeak-theme&#34;&gt;Tranquilpeak&lt;/a&gt; whose author is &lt;a href=&#34;https://github.com/kakawait&#34;&gt;kakawait&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;My personal  blog based on  the &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; theme &lt;a href=&#34;https://themes.gohugo.io/hugo-tranquilpeak-theme&#34;&gt;Tranquilpeak&lt;/a&gt;, whose author is &lt;a href=&#34;https://github.com/kakawait&#34;&gt;kakawait&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -41,7 +41,7 @@
       <guid>/2018/10/%E4%BB%8E%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%88%B0runge-kutta%E6%B3%95/</guid>
       <description>&lt;p&gt;对于一个一阶线性微分方程，&lt;/p&gt;
 
-&lt;p&gt;$$\frac{dy}{dx} = f(x, y)$$&lt;/p&gt;
+&lt;p&gt;$$\frac{dy}{dx} = f(x, y), x \in (x_{start}, x_{end})$$&lt;/p&gt;
 
 &lt;p&gt;给定初值\(y(x_0) = y_0\), 一般来说, 当\(f\)是一个具有好的性质的函数时, 例如连续可导, 那么该问题是具有唯一解的. 本文主要介绍如何在有限的步长得到更高的精度, 实际上就是Runge-Kutta算法的思路.
 &lt;/p&gt;</description>

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hexo Theme on My personal blog</title>
-    <link>/tags/hexo-theme/</link>
-    <description>Recent content in Hexo Theme on My personal blog</description>
+    <title>Hugo Theme on </title>
+    <link>/tags/hugo-theme/</link>
+    <description>Recent content in Hugo Theme on </description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 01 Nov 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/tags/hexo-theme/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="/tags/hugo-theme/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -17,7 +17,7 @@
       <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/11/welcome-to-tranquilpeak-0.4.4-beta/</guid>
-      <description>&lt;p&gt;My personal  blog based on  &lt;a href=&#34;https://themes.gohugo.io/hugo-tranquilpeak-theme&#34;&gt;Tranquilpeak&lt;/a&gt; whose author is &lt;a href=&#34;https://github.com/kakawait&#34;&gt;kakawait&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;My personal  blog based on  the &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; theme &lt;a href=&#34;https://themes.gohugo.io/hugo-tranquilpeak-theme&#34;&gt;Tranquilpeak&lt;/a&gt;, whose author is &lt;a href=&#34;https://github.com/kakawait&#34;&gt;kakawait&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
