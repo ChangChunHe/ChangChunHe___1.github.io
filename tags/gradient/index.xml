@@ -21,9 +21,7 @@
 
 &lt;p&gt;$$x_{k+1} = x_k - \alpha_k \nabla f(x_k) $$&lt;/p&gt;
 
-&lt;p&gt;其中\(\alpha_k\)为步长.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+&lt;p&gt;其中\(\alpha_k\)为步长.&lt;/p&gt;</description>
     </item>
     
   </channel>

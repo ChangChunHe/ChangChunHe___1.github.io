@@ -17,9 +17,7 @@
       <pubDate>Fri, 24 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/08/%E4%B8%89%E7%BB%B4%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8F%92%E5%80%BC%E6%96%B9%E6%B3%95/</guid>
-      <description>&lt;p&gt;一般而言, 二元函数或者曲面面的插值maltab已经有很强大的库函数了, 例如三次样条插值&lt;code&gt;spline&lt;/code&gt;, 曲面插值&lt;code&gt;interp, interp2, griddata&lt;/code&gt;等等. 但是对于一组三维曲线的拟合似乎并没有很好的函数可以解决这个问题, 本文简单介绍一下我的方法.&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <description>&lt;p&gt;一般而言, 二元函数或者曲面面的插值maltab已经有很强大的库函数了, 例如三次样条插值&lt;code&gt;spline&lt;/code&gt;, 曲面插值&lt;code&gt;interp, interp2, griddata&lt;/code&gt;等等. 但是对于一组三维曲线的拟合似乎并没有很好的函数可以解决这个问题, 本文简单介绍一下我的方法.&lt;/p&gt;</description>
     </item>
     
   </channel>

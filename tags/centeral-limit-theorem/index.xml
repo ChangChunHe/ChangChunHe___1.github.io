@@ -24,8 +24,7 @@
 \begin{equation}
 f(t) = \frac{1}{2\pi} \int \hat{f}(\omega)e^{j\omega t}d\omega
 \end{equation}
-&lt;div align=center&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Fourier_transform_time_and_frequency_domains.gif&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;
-&lt;/p&gt;</description>
+&lt;div align=center&gt;&lt;img src=&#34;https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Fourier_transform_time_and_frequency_domains.gif&#34; alt=&#34;&#34; /&gt;&lt;/div&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>
