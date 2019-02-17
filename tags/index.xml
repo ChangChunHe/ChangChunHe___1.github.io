@@ -50,7 +50,7 @@
     <item>
       <title>Hugo Theme</title>
       <link>/tags/hugo-theme/</link>
-      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/tags/hugo-theme/</guid>
       <description></description>
@@ -98,6 +98,15 @@
       <pubDate>Mon, 27 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistic</title>
+      <link>/tags/statistic/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/tags/statistic/</guid>
       <description></description>
     </item>
     

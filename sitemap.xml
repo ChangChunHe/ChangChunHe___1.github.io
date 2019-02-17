@@ -3,8 +3,13 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2018/11/welcome-to-tranquilpeak-0.4.4-beta/</loc>
-    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+    <loc>/2019/02/welcome-to-tranquilpeak-0.4.4-beta/</loc>
+    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/</loc>
+    <lastmod>2019-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -121,7 +126,7 @@
   
   <url>
     <loc>/tags/hugo-theme/</loc>
-    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -163,7 +168,7 @@
   
   <url>
     <loc>/</loc>
-    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -175,12 +180,6 @@
   
   <url>
     <loc>/categories/numerical-analysis/</loc>
-    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/ode/</loc>
     <lastmod>2018-10-14T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -199,13 +198,25 @@
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/tags/python/</loc>
     <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/categories/random-process/</loc>
+    <lastmod>2019-02-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>/tags/statistic/</loc>
+    <lastmod>2019-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -217,7 +228,7 @@
   
   <url>
     <loc>/categories/tranquilpeak/</loc>
-    <lastmod>2018-11-01T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   

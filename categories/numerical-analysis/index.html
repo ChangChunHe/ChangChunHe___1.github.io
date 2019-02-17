@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.53 with theme Tranquilpeak 0.4.3-SNAPSHOT">
+<meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="ChangChun He">
 <meta name="keywords" content=", Physics, Mathematics, MATLAB, Python, VASP">
 <meta name="description" content="The place I will share something">
@@ -243,8 +243,6 @@
   
     <span>in</span>
     
-      <a class="category-link" href="/categories/ode">ODE</a>, 
-    
       <a class="category-link" href="/categories/numerical-analysis">Numerical Analysis</a>
     
   
@@ -335,15 +333,36 @@
           <div class="media">
             
             <div class="media-body">
-              <a class="link-unstyled" href="/2018/11/welcome-to-tranquilpeak-0.4.4-beta/">
+              <a class="link-unstyled" href="/2019/02/welcome-to-tranquilpeak-0.4.4-beta/">
                 <h3 class="media-heading">Welcome to Tranquilpeak 0.4.4-BETA</h3>
               </a>
               <span class="media-meta">
                 <span class="media-date text-small">
-                  Nov 11, 2018
+                  Feb 2, 2019
                 </span>
               </span>
               <div class="media-content hide-xs font-merryweather"><p>My personal  blog based on  the <a href="https://gohugo.io/">hugo</a> theme <a href="https://themes.gohugo.io/hugo-tranquilpeak-theme">Tranquilpeak</a>, whose author is <a href="https://github.com/kakawait">kakawait</a>.</p></div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/">
+                <h3 class="media-heading">随机行走</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Feb 2, 2019
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么 $$S_n= \begin{cases} S_{n-1}+1&amp; \text{rand &lt; p}\\
+S_{n-1}-1&amp; \text{others} \end{cases}$$
+一般我们设置\( p = 1 / 2\)为对称的随机行走. 这个模型我们会考虑行走的位置\(S_n\)的期望与时间\(n\)的关系, 以及\(S_n^{2}, |S_n|\)与时间\(n\)的关系, 还有考虑该模型的常返性, 以及在解微分方程上的应用.
+一些期望的计算 首先可以很容易看出, \(S_n\)的期望值是等于零的.
+\(E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0\)</div>
             </div>
             <div style="clear:both;"></div>
             <hr>
@@ -490,27 +509,6 @@
             <hr>
           </div>
         
-          <div class="media">
-            
-            <div class="media-body">
-              <a class="link-unstyled" href="/2018/08/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B0%E6%9E%81%E5%B0%8F%E5%80%BC-1/">
-                <h3 class="media-heading">梯度下降法求解函数极小值-1</h3>
-              </a>
-              <span class="media-meta">
-                <span class="media-date text-small">
-                  Aug 8, 2018
-                </span>
-              </span>
-              <div class="media-content hide-xs font-merryweather"><p>我们知道, 函数沿着负梯度方向下降是最快的, 因此利用梯度下降法是计算函数极小值的常用的方法.因此如果我们确定一个初始点\(x_0\), 那么利用迭代公式:</p>
-
-<p>$$x_{k+1} = x_k - \alpha_k \nabla f(x_k) $$</p>
-
-<p>其中\(\alpha_k\)为步长.</p></div>
-            </div>
-            <div style="clear:both;"></div>
-            <hr>
-          </div>
-        
       </div>
     </div>
     <div class="modal-footer">
@@ -518,7 +516,7 @@
          data-message-zero="no post found"
          data-message-one="1 post found"
          data-message-other="{n} posts found">
-         14 posts found
+         15 posts found
       </p>
     </div>
   </div>

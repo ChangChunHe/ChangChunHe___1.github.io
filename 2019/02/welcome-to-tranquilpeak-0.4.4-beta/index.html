@@ -8,53 +8,35 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="ChangChun He">
 <meta name="keywords" content=", Physics, Mathematics, MATLAB, Python, VASP">
-<meta name="description" content="我们知道, 函数沿着负梯度方向下降是最快的, 因此利用梯度下降法是计算函数极小值的常用的方法.因此如果我们确定一个初始点\(x_0\), 那么利用迭代公式:
-
-$$x_{k&#43;1} = x_k - \alpha_k \nabla f(x_k) $$
-
-其中\(\alpha_k\)为步长.">
+<meta name="description" content="My personal  blog based on  the hugo theme Tranquilpeak, whose author is kakawait.">
 
 
-<meta property="og:description" content="我们知道, 函数沿着负梯度方向下降是最快的, 因此利用梯度下降法是计算函数极小值的常用的方法.因此如果我们确定一个初始点\(x_0\), 那么利用迭代公式:
-
-$$x_{k&#43;1} = x_k - \alpha_k \nabla f(x_k) $$
-
-其中\(\alpha_k\)为步长.">
+<meta property="og:description" content="My personal  blog based on  the hugo theme Tranquilpeak, whose author is kakawait.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="梯度下降法求解函数极小值-1">
-<meta name="twitter:title" content="梯度下降法求解函数极小值-1">
-<meta property="og:url" content="/2018/08/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B0%E6%9E%81%E5%B0%8F%E5%80%BC-1/">
-<meta property="twitter:url" content="/2018/08/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B0%E6%9E%81%E5%B0%8F%E5%80%BC-1/">
+<meta property="og:title" content="Welcome to Tranquilpeak 0.4.4-BETA">
+<meta name="twitter:title" content="Welcome to Tranquilpeak 0.4.4-BETA">
+<meta property="og:url" content="/2019/02/welcome-to-tranquilpeak-0.4.4-beta/">
+<meta property="twitter:url" content="/2019/02/welcome-to-tranquilpeak-0.4.4-beta/">
 <meta property="og:site_name" content="My persoanl blog">
-<meta property="og:description" content="我们知道, 函数沿着负梯度方向下降是最快的, 因此利用梯度下降法是计算函数极小值的常用的方法.因此如果我们确定一个初始点\(x_0\), 那么利用迭代公式:
-
-$$x_{k&#43;1} = x_k - \alpha_k \nabla f(x_k) $$
-
-其中\(\alpha_k\)为步长.">
-<meta name="twitter:description" content="我们知道, 函数沿着负梯度方向下降是最快的, 因此利用梯度下降法是计算函数极小值的常用的方法.因此如果我们确定一个初始点\(x_0\), 那么利用迭代公式:
-
-$$x_{k&#43;1} = x_k - \alpha_k \nabla f(x_k) $$
-
-其中\(\alpha_k\)为步长.">
+<meta property="og:description" content="My personal  blog based on  the hugo theme Tranquilpeak, whose author is kakawait.">
+<meta name="twitter:description" content="My personal  blog based on  the hugo theme Tranquilpeak, whose author is kakawait.">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2018-08-20T00:00:00">
+    <meta property="article:published_time" content="2019-02-17T00:00:00">
   
   
-    <meta property="article:modified_time" content="2018-08-20T00:00:00">
+    <meta property="article:modified_time" content="2019-02-17T00:00:00">
   
-  
-  
-    
-      <meta property="article:section" content="optimization">
-    
   
   
     
-      <meta property="article:tag" content="Python">
+      <meta property="article:section" content="tranquilpeak">
     
-      <meta property="article:tag" content="gradient">
+  
+  
+    
+      <meta property="article:tag" content="hugo theme">
     
   
 
@@ -67,6 +49,12 @@ $$x_{k&#43;1} = x_k - \alpha_k \nabla f(x_k) $$
 
 
 
+  <meta property="og:image" content="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dandelion_by_Paul_Talbot_littler.jpg">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dandelion_by_Paul_Talbot_littler.jpg">
+
+
+  <meta property="og:image" content="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dandelion_by_Paul_Talbot.jpg">
+  <meta property="twitter:image" content="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dandelion_by_Paul_Talbot.jpg">
 
 
 
@@ -75,14 +63,14 @@ $$x_{k&#43;1} = x_k - \alpha_k \nabla f(x_k) $$
   <meta property="twitter:image" content="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dew_by_Aaron_Burden.jpg">
 
 
-    <title>梯度下降法求解函数极小值-1</title>
+    <title>Welcome to Tranquilpeak 0.4.4-BETA</title>
 
     <link rel="icon" href="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/favicon.ico">
     
 
     
 
-    <link rel="canonical" href="/2018/08/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B0%E6%9E%81%E5%B0%8F%E5%80%BC-1/">
+    <link rel="canonical" href="/2019/02/welcome-to-tranquilpeak-0.4.4-beta/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -231,26 +219,24 @@ $$x_{k&#43;1} = x_k - \alpha_k \nabla f(x_k) $$
 </nav>
 
       
-
-      <div id="main" data-behavior="4"
-        class="
-               hasCoverMetaIn
-               ">
-        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
-          
-          
-            <div class="post-header main-content-wrap text-left">
+  <div class="post-header-cover
+              text-center
+              "
+       style="background-image:url('https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/Dandelion_by_Paul_Talbot.jpg')"
+       data-behavior="4">
+    
+      <div class="post-header main-content-wrap text-center">
   
     <h1 class="post-title" itemprop="headline">
-      梯度下降法求解函数极小值-1
+      Welcome to Tranquilpeak 0.4.4-BETA
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2018-08-20T00:00:00Z">
+      <time itemprop="datePublished" datetime="2019-02-17T00:00:00Z">
         
-  August 20, 2018
+  February 17, 2019
 
       </time>
     
@@ -259,130 +245,55 @@ $$x_{k&#43;1} = x_k - \alpha_k \nabla f(x_k) $$
   
     <span>in</span>
     
-      <a class="category-link" href="/categories/optimization">optimization</a>
+      <a class="category-link" href="/categories/tranquilpeak">tranquilpeak</a>
     
   
 
   </div>
 
 </div>
+    
+  </div>
+
+
+      <div id="main" data-behavior="4"
+        class="hasCover
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>我们知道, 函数沿着负梯度方向下降是最快的, 因此利用梯度下降法是计算函数极小值的常用的方法.因此如果我们确定一个初始点\(x_0\), 那么利用迭代公式:</p>
+              <p>My personal  blog based on  the <a href="https://gohugo.io/">hugo</a> theme <a href="https://themes.gohugo.io/hugo-tranquilpeak-theme">Tranquilpeak</a>, whose author is <a href="https://github.com/kakawait">kakawait</a>.</p>
 
-<p>$$x_{k+1} = x_k - \alpha_k \nabla f(x_k) $$</p>
+<p>I will record and share something interesting or useful in my mind here,  the content will include but not limit to physics, mathematics and computer science.</p>
 
-<p>其中\(\alpha_k\)为步长.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>Physics</strong>
 
-<p>举一个简单的例子(一下的代码是在jupyter-notebook中运行的):</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Statistical Physics</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Quantum Physics</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Solid state Physics</label></li>
+</ul></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>Mathematics</strong>
 
-<pre><code class="language-Python">f = lambda x, y: x**2+y**2-2*x*y+y**2-2*y # 所要优化的函数
-diff_fx = lambda x, y: 2*x-2*y#偏导数
-diff_fy = lambda x, y: 4*y-2*x-2
-# 设置起始点, 步长
-init_point = [30, 6]
-alph = 0.1
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Fourier analysis</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Numerical analysis</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Geometry</label></li>
+</ul></label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> <strong>Computer Science</strong>
 
-for ii in range(30):
-    init_point[0] = init_point[0] - alph*diff_fx(*init_point)
-    init_point[1] = init_point[1] - alph*diff_fy(*init_point)
-print(diff_fx(*init_point), diff_fy(*init_point))
-
-</code></pre>
-
-<pre><code>## 经过30步的优化, x变成了:
-1.386617494686719 0.526631421096333
-
-
-print(f(* init_point))
-### 此时的函数值：
-
-0.3958073725790734
-</code></pre>
-
-<p>实际上我们设置的函数为:
-$$f(x, y) = (x-y)^{2}+(y-1)^{2}-1$$
-很明显, 当\(x = y = 1\)的时候函数取得极小值, 为-1. 对比上诉的结果很明显并不尽人意. 上面的方法是步长是不变的, 如果改变不长会不会是效果变好呢, 答案是显然的. 但是什么样的步长是最佳的呢？ 这里我们考虑一个正定二次型函数:
-$$f = \frac{1}{2} x^{T}Qx$$</p>
-
-<p>我们知道沿着负梯度的方向, 函数值会变小, 但是这里涉及到步长的取值, 我们可以采用一般的一维搜索的方法, 也即为</p>
-
-<p>\begin{equation}
-\alpha_k = argmin ~ f(x_k -\alpha_kg(x_k))
-\end{equation}</p>
-
-<p>其中\(g(x_k)=\nabla f(x_k)\). 因此我们对\(\alpha_k\)求一个极值即可.</p>
-
-<p>所以有</p>
-
-<p>\begin{equation}
- 0 = g(x_k)^{T}f&rsquo;(x_k -\alpha_kg(x_k))
-   =g(x_k)^{T}Q(x_k -\alpha_kg(x_k))
-   \end{equation}</p>
-
-<p>从而得出</p>
-
-<p>$$\alpha_k = \frac{g(x_k)^{T}g(x_k)^{T}}{g(x_k)^{T}Qg(x_k)^{T}}$$</p>
-
-<p>因此对于二次型的函数而言, 步长为\(\alpha_{k}\)的梯度下降法为最佳步长, 因此该种算法也被称为最速下降法.</p>
-
-<p>仍然以上面的函数为例</p>
-
-<pre><code class="language-python">
-f = lambda x, y: x**2+y**2-2*x*y+y**2-2*y # 所要优化的函数
-diff_fx = lambda x, y: 2*x-2*y#偏导数
-diff_fy = lambda x, y: 4*y-2*x-2
-Q = [[2, -2], [-2, 4]]
-# 设置起始点
-init_point = [30, 6]
-
-import copy
-gx, gy = diff_fx(*init_point), diff_fy(*init_point)
-path = [copy.deepcopy(init_point)]
-for ii in range(30):
-    Q = [[2, -2], [-2, 4]]
-    alph = (gx**2 + gy**2)/(Q[0][0]*gx**2+Q[1][1]*gy**2+Q[0][1]*gx*gy*2)
-    init_point[0] = init_point[0] - alph*diff_fx(*init_point)
-    init_point[1] = init_point[1] - alph*diff_fy(*init_point)
-    path.append(copy.deepcopy(init_point))
-    gx, gy = diff_fx(*init_point), diff_fy(*init_point)
-print(diff_fx(*init_point), diff_fy(*init_point))
-</code></pre>
-
-<pre><code>## 输出梯度, 可见此时30步就已经收敛了
-7.2984678589627094e-06 -1.2736575571992148e-07
-</code></pre>
-
-<p>为了让该过程更加形象一点, 我们可以画一个示意图来标识在搜寻过程中<code>x</code>的位置走向.</p>
-
-<pre><code class="language-Python"># 定义等高线图的横纵坐标x，y
-#从左边取值为从 -3 到 3 ，各取5个点，一共取 5*5 = 25 个点
-%matplotlib inline ## 这个是jupyter-notebook 的magic命令, 可以inline显示图片
-import numpy as np
-import matplotlib.pyplot as plt
-x = np.linspace(-35, 35, 120)
-y = np.linspace(-35, 35, 120)
-# 将原始数据变成网格数据
-X, Y = np.meshgrid(x, y)
-
-Height = (X-Y)**2+(Y-1)**2-1
-# 填充颜色
-plt.contourf(X, Y, Height, 10, alpha = 0.6, cmap = plt.cm.hot)
-# 绘制等高线
-C = plt.contour(X, Y, Height, 10, colors = 'black')
-# 显示各等高线的数据标签
-plt.clabel(C, inline = True, fontsize = 10)
-
-for ii in range(len(path)-1):
-    plt.plot([path[ii][0], path[ii+1][0]], [path[ii][1], path[ii+1][1]], color='red')
-plt.plot(init_point[0], init_point[1], 'go')
-plt.show()
-</code></pre>
-
-<p><img src="https://raw.githubusercontent.com/ChangChunHe/Blog_image/master/x_trace.png" alt="x的轨迹图" /></p>
-
-<p>该份博客的代码已经用jupyter-notebook实现, 地址在<a href="https://github.com/ChangChunHe/PythonLearning/blob/master/Optimization/2.Gradient_descent_1.ipynb">这</a>.</p>
+<ul class="task-list">
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Machine Learning</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> Python</label></li>
+<li><label><input type="checkbox" checked disabled class="task-list-item"> MATLAB &amp;&amp; Julia</label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> Algorithm and Data Structure</label></li>
+</ul></label></li>
+<li><label><input type="checkbox" disabled class="task-list-item"> <strong>TODO</strong></label></li>
+</ul>
               
             </div>
           </div>
@@ -394,9 +305,7 @@ plt.show()
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="/tags/python/">Python</a>
-
-  <a class="tag tag--primary tag--small" href="/tags/gradient/">gradient</a>
+  <a class="tag tag--primary tag--small" href="/tags/hugo-theme/">hugo theme</a>
 
                   </div>
                 
@@ -409,7 +318,7 @@ plt.show()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/08/%E4%B8%89%E7%BB%B4%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8F%92%E5%80%BC%E6%96%B9%E6%B3%95/" data-tooltip="三维曲线的插值方法">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -417,7 +326,7 @@ plt.show()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/08/%E4%BB%8E%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%8E%A8%E5%AF%BC%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" data-tooltip="从傅里叶变换的卷积定理推导中心极限定理">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/" data-tooltip="随机行走">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>
@@ -467,7 +376,7 @@ plt.show()
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/08/%E4%B8%89%E7%BB%B4%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8F%92%E5%80%BC%E6%96%B9%E6%B3%95/" data-tooltip="三维曲线的插值方法">
+                <a class="post-action-btn btn btn--disabled">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
@@ -475,7 +384,7 @@ plt.show()
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2018/08/%E4%BB%8E%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%8E%A8%E5%AF%BC%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/" data-tooltip="从傅里叶变换的卷积定理推导中心极限定理">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/" data-tooltip="随机行走">
               
                   <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
                   <i class="fa fa-angle-right"></i>

@@ -66,15 +66,6 @@
     </item>
     
     <item>
-      <title>Ode</title>
-      <link>/categories/ode/</link>
-      <pubDate>Sun, 14 Oct 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/ode/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Optimization</title>
       <link>/categories/optimization/</link>
       <pubDate>Sat, 25 Aug 2018 00:00:00 +0000</pubDate>
@@ -93,9 +84,18 @@
     </item>
     
     <item>
+      <title>Random Process</title>
+      <link>/categories/random-process/</link>
+      <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/categories/random-process/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Tranquilpeak</title>
       <link>/categories/tranquilpeak/</link>
-      <pubDate>Thu, 01 Nov 2018 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 17 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>/categories/tranquilpeak/</guid>
       <description></description>
