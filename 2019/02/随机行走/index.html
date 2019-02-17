@@ -8,34 +8,38 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="ChangChun He">
 <meta name="keywords" content=", Physics, Mathematics, MATLAB, Python, VASP">
-<meta name="description" content="随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么 $$S_n= \begin{cases} S_{n-1}&#43;1&amp; \text{rand &lt; p}\\
-S_{n-1}-1&amp; \text{others} \end{cases}$$
-一般我们设置\( p = 1 / 2\)为对称的随机行走. 这个模型我们会考虑行走的位置\(S_n\)的期望与时间\(n\)的关系, 以及\(S_n^{2}, |S_n|\)与时间\(n\)的关系, 还有考虑该模型的常返性, 以及在解微分方程上的应用.
-一些期望的计算 首先可以很容易看出, \(S_n\)的期望值是等于零的.
-\(E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0\)">
+<meta name="description" content="随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
+$$S_n=
+\begin{cases}
+S_{n-1}&#43;1&amp; \text{rand &lt; p}\\
+S_{n-1}-1&amp; \text{others}
+\end{cases}$$">
 
 
-<meta property="og:description" content="随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么 $$S_n= \begin{cases} S_{n-1}&#43;1&amp; \text{rand &lt; p}\\
-S_{n-1}-1&amp; \text{others} \end{cases}$$
-一般我们设置\( p = 1 / 2\)为对称的随机行走. 这个模型我们会考虑行走的位置\(S_n\)的期望与时间\(n\)的关系, 以及\(S_n^{2}, |S_n|\)与时间\(n\)的关系, 还有考虑该模型的常返性, 以及在解微分方程上的应用.
-一些期望的计算 首先可以很容易看出, \(S_n\)的期望值是等于零的.
-\(E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0\)">
+<meta property="og:description" content="随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
+$$S_n=
+\begin{cases}
+S_{n-1}&#43;1&amp; \text{rand &lt; p}\\
+S_{n-1}-1&amp; \text{others}
+\end{cases}$$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随机行走">
 <meta name="twitter:title" content="随机行走">
 <meta property="og:url" content="/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/">
 <meta property="twitter:url" content="/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/">
 <meta property="og:site_name" content="My persoanl blog">
-<meta property="og:description" content="随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么 $$S_n= \begin{cases} S_{n-1}&#43;1&amp; \text{rand &lt; p}\\
-S_{n-1}-1&amp; \text{others} \end{cases}$$
-一般我们设置\( p = 1 / 2\)为对称的随机行走. 这个模型我们会考虑行走的位置\(S_n\)的期望与时间\(n\)的关系, 以及\(S_n^{2}, |S_n|\)与时间\(n\)的关系, 还有考虑该模型的常返性, 以及在解微分方程上的应用.
-一些期望的计算 首先可以很容易看出, \(S_n\)的期望值是等于零的.
-\(E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0\)">
-<meta name="twitter:description" content="随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么 $$S_n= \begin{cases} S_{n-1}&#43;1&amp; \text{rand &lt; p}\\
-S_{n-1}-1&amp; \text{others} \end{cases}$$
-一般我们设置\( p = 1 / 2\)为对称的随机行走. 这个模型我们会考虑行走的位置\(S_n\)的期望与时间\(n\)的关系, 以及\(S_n^{2}, |S_n|\)与时间\(n\)的关系, 还有考虑该模型的常返性, 以及在解微分方程上的应用.
-一些期望的计算 首先可以很容易看出, \(S_n\)的期望值是等于零的.
-\(E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0\)">
+<meta property="og:description" content="随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
+$$S_n=
+\begin{cases}
+S_{n-1}&#43;1&amp; \text{rand &lt; p}\\
+S_{n-1}-1&amp; \text{others}
+\end{cases}$$">
+<meta name="twitter:description" content="随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
+$$S_n=
+\begin{cases}
+S_{n-1}&#43;1&amp; \text{rand &lt; p}\\
+S_{n-1}-1&amp; \text{others}
+\end{cases}$$">
 <meta property="og:locale" content="en-us">
 
   
@@ -267,9 +271,7 @@ S_{n-1}-1&amp; \text{others} \end{cases}$$
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              
-
-<p>随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
+              <p>随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
 $$S_n=
 \begin{cases}
 S_{n-1}+1&amp; \text{rand &lt; p}\\<br />
@@ -283,7 +285,6 @@ S_{n-1}-1&amp; \text{others}
 <p>首先可以很容易看出, \(S_n\)的期望值是等于零的.</p>
 
 <p>\(E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0\)</p>
-
               
             </div>
           </div>
@@ -498,11 +499,12 @@ S_{n-1}-1&amp; \text{others}
                   Feb 2, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么 $$S_n= \begin{cases} S_{n-1}+1&amp; \text{rand &lt; p}\\
-S_{n-1}-1&amp; \text{others} \end{cases}$$
-一般我们设置\( p = 1 / 2\)为对称的随机行走. 这个模型我们会考虑行走的位置\(S_n\)的期望与时间\(n\)的关系, 以及\(S_n^{2}, |S_n|\)与时间\(n\)的关系, 还有考虑该模型的常返性, 以及在解微分方程上的应用.
-一些期望的计算 首先可以很容易看出, \(S_n\)的期望值是等于零的.
-\(E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0\)</div>
+              <div class="media-content hide-xs font-merryweather"><p>随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
+$$S_n=
+\begin{cases}
+S_{n-1}+1&amp; \text{rand &lt; p}\\<br />
+S_{n-1}-1&amp; \text{others}
+\end{cases}$$</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>

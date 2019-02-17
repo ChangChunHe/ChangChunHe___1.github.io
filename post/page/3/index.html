@@ -604,11 +604,12 @@ f(t) = \frac{1}{2\pi} \int \hat{f}(\omega)e^{j\omega t}d\omega
                   Feb 2, 2019
                 </span>
               </span>
-              <div class="media-content hide-xs font-merryweather">随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么 $$S_n= \begin{cases} S_{n-1}+1&amp; \text{rand &lt; p}\\
-S_{n-1}-1&amp; \text{others} \end{cases}$$
-一般我们设置\( p = 1 / 2\)为对称的随机行走. 这个模型我们会考虑行走的位置\(S_n\)的期望与时间\(n\)的关系, 以及\(S_n^{2}, |S_n|\)与时间\(n\)的关系, 还有考虑该模型的常返性, 以及在解微分方程上的应用.
-一些期望的计算 首先可以很容易看出, \(S_n\)的期望值是等于零的.
-\(E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0\)</div>
+              <div class="media-content hide-xs font-merryweather"><p>随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
+$$S_n=
+\begin{cases}
+S_{n-1}+1&amp; \text{rand &lt; p}\\<br />
+S_{n-1}-1&amp; \text{others}
+\end{cases}$$</p></div>
             </div>
             <div style="clear:both;"></div>
             <hr>
