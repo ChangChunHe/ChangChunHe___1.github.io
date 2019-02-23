@@ -3,8 +3,8 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2019/02/welcome-to-tranquilpeak-0.4.4-beta/</loc>
-    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
+    <loc>/2019/02/welcome-to-my-blog/</loc>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -13,198 +13,30 @@
   </url>
   
   <url>
-    <loc>/2018/10/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-3/</loc>
-    <lastmod>2018-10-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/10/%E4%BB%8E%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86%E5%88%B0runge-kutta%E6%B3%95/</loc>
-    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/09/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-2/</loc>
-    <lastmod>2018-09-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/matlab%E5%88%B6%E4%BD%9C2048game%E5%92%8Cauto-player-1/</loc>
-    <lastmod>2018-08-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/tight-binding-model/</loc>
-    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/iteration_fractal/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/%E7%89%9B%E9%A1%BF%E6%B3%95%E6%B1%82%E8%A7%A3%E6%9E%81%E5%B0%8F%E5%80%BC/</loc>
-    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/%E4%B8%89%E7%BB%B4%E6%9B%B2%E7%BA%BF%E7%9A%84%E6%8F%92%E5%80%BC%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2018-08-24T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E6%B3%95%E6%B1%82%E8%A7%A3%E5%87%BD%E6%95%B0%E6%9E%81%E5%B0%8F%E5%80%BC-1/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/%E4%BB%8E%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%9A%84%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E6%8E%A8%E5%AF%BC%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86/</loc>
-    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/%E4%B8%80%E7%BB%B4%E5%87%BD%E6%95%B0%E7%9A%84%E6%9E%81%E5%B0%8F%E5%80%BC%E6%90%9C%E7%B4%A2%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2018-08-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/numpy%E4%B8%AD%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%96%B9%E6%B3%95-loadtxt%E5%92%8Cgenfromtxt/</loc>
-    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/2018/08/matlab%E5%A6%82%E4%BD%95%E8%AF%BB%E5%8F%96%E5%92%8C%E5%86%99%E5%85%A5%E6%96%87%E6%9C%AC%E6%96%87%E4%BB%B6/</loc>
-    <lastmod>2018-08-12T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/2048-game/</loc>
-    <lastmod>2018-10-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/band-structure/</loc>
-    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>/categories/</loc>
-    <lastmod>2018-10-30T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/centeral-limit-theorem/</loc>
-    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/coding/</loc>
-    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/fourier-theory/</loc>
-    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/gradient/</loc>
-    <lastmod>2018-08-20T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/hugo-theme/</loc>
-    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/interpolation/</loc>
-    <lastmod>2018-08-24T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/io/</loc>
-    <lastmod>2018-08-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/iteration/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/machine-learning/</loc>
-    <lastmod>2018-10-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/math/</loc>
-    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/matlab/</loc>
-    <lastmod>2018-10-30T00:00:00+00:00</lastmod>
+    <loc>/tags/hego-theme/</loc>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/</loc>
-    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/newton-method/</loc>
-    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/numerical-analysis/</loc>
-    <lastmod>2018-10-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/optimization/</loc>
-    <lastmod>2018-08-25T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/categories/physical-model/</loc>
-    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/post/</loc>
-    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/python/</loc>
-    <lastmod>2018-08-27T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -222,13 +54,13 @@
   
   <url>
     <loc>/tags/</loc>
-    <lastmod>2018-08-28T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>/categories/tranquilpeak/</loc>
-    <lastmod>2019-02-17T00:00:00+00:00</lastmod>
+    <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
