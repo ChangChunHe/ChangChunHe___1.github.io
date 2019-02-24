@@ -3,63 +3,63 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/2019/02/welcome-to-my-blog/</loc>
+    <loc>https://changchunhe.github.io/2019/02/welcome-to-my-blog/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/</loc>
+    <loc>https://changchunhe.github.io/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/</loc>
     <lastmod>2019-02-16T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/archives/</loc>
+    <loc>https://changchunhe.github.io/archives/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://changchunhe.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/hego-theme/</loc>
+    <loc>https://changchunhe.github.io/tags/hego-theme/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
+    <loc>https://changchunhe.github.io/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>https://changchunhe.github.io/post/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/random-process/</loc>
-    <lastmod>2019-02-16T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/statistic/</loc>
+    <loc>https://changchunhe.github.io/categories/random-process/</loc>
     <lastmod>2019-02-16T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://changchunhe.github.io/tags/statistic/</loc>
+    <lastmod>2019-02-16T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://changchunhe.github.io/tags/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/categories/tranquilpeak/</loc>
+    <loc>https://changchunhe.github.io/categories/tranquilpeak/</loc>
     <lastmod>2019-02-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

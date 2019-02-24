@@ -2,30 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Hugo tranquilpeak theme</title>
-    <link>/post/</link>
+    <link>https://changchunhe.github.io/post/</link>
     <description>Recent content in Posts on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Feb 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://changchunhe.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Welcome to My Blog</title>
-      <link>/2019/02/welcome-to-my-blog/</link>
+      <link>https://changchunhe.github.io/2019/02/welcome-to-my-blog/</link>
       <pubDate>Fri, 22 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/02/welcome-to-my-blog/</guid>
+      <guid>https://changchunhe.github.io/2019/02/welcome-to-my-blog/</guid>
       <description>&lt;p&gt;My personal blog based on the &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; theme &lt;a href=&#34;https://themes.gohugo.io/hugo-tranquilpeak-theme&#34;&gt;Tranquilpeak&lt;/a&gt;, whose author is &lt;a href=&#34;https://github.com/kakawait&#34;&gt;kakawait&lt;/a&gt;.&lt;/p&gt;</description>
     </item>
     
     <item>
       <title>随机行走</title>
-      <link>/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/</link>
+      <link>https://changchunhe.github.io/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/</link>
       <pubDate>Sat, 16 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/</guid>
+      <guid>https://changchunhe.github.io/2019/02/%E9%9A%8F%E6%9C%BA%E8%A1%8C%E8%B5%B0/</guid>
       <description>&lt;p&gt;随机行走在随机过程中是一个很简单而又很经典的例子, 以一维随机行走为例, 每一时刻都按照概率\(p\)向右走一格, 按照概率\(1-p\)向左走一格. 我们记\(S_n\)为第\(n\)步走到的位置, 那么
 $$S_n=
 \begin{cases}
