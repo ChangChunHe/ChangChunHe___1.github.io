@@ -352,15 +352,47 @@ S_{n-1}-1&amp; \text{others}
 
 <p>首先可以很容易看出, \(S_n\)的期望值是等于零的.</p>
 
-<p>\begin{equation}
+<p>$$
 E(S_n) = E(\sum_{k=1}^{n} a_k) = \sum_{k=1}^{n}E(a_k) = 0
-\end{equation}</p>
+$$</p>
 
 <p>对于$S_n^{2}$的期望, 我们有:</p>
 
-<p>\begin{equation}
-E(S_n^{2}) = asd
-\end{equation}</p>
+<p>\begin{align*}
+E(S_n^{2}) &amp;= E\left(\left(\sum_{k=1}^{n} a_k\right)^2 \right) \newline
+&amp; = E\left(\sum_{k=1}^{n} a_k^2\right) + 2\sum_{i=1}^{n}\sum_{j&gt;i}^{n}\ E(a_i a_j)\newline
+&amp;= E\left(\sum_{k=1}^{n} a_k^2\right) = \sum_{k=1}^{n}E(a_k) = n
+\end{align*}</p>
+
+<p>所以可以看到随机行走的扩散的范围的期望是与行走的步数的平方根成正比的, 那么我们可以计算一下$|S_n|$的期望.</p>
+
+<p>首先不妨我们假设$n = 2m$, 那么$S_n$的取值即为$-2m,2m+2,&hellip;,2m$, 我们可以计算出$S_n$取各个值的概率, 例如$S_n = 2k$即为向右行走的步数比向左走的步数要多$2k$, 那么可以得到向右走的步数为$S_{right} = m+k$, 向左走的步数为$S_{left} = m-k$, 因此我们只需要从$2m$的步数中选取$m+k$为$+1$即可.所以概率为</p>
+
+<p>$$ P\left( S_n = 2k \right) = \frac{C_{2m}^{m+k}}{2^{2m}} = \frac{(2m)!}{2^{2m}(m+k)!(m-k)!}$$</p>
+
+<p>实际上这样就可以求出$|S_n|$的期望了, 但是并不是一个解析的形式, 但是我们可以求出$n\rightarrow\infty$的极限值.. 利用<a href="https://en.wikipedia.org/wiki/Stirling%27s_approximation">stirling-approximation</a>, $n!\sim \sqrt{2\pi n}\left(\frac{n}{e}\right)^n$就可以进行近似计算.</p>
+
+<p>因此上述的概率可以简化为:</p>
+
+<p>$$ P\left( S_n = 2k \right) = \sqrt{\frac{2m}{2\pi(m^2-k^2)}}\frac{m^{2m}}{(m+k)^{m+k}(m-k)^{m-k}}$$</p>
+
+<p>下面为了方便我们取对数:</p>
+
+<p>\begin{align*}
+\ln P &amp;= - (m-k) \ln(1-\frac{k}{m}) - (m+k) \ln(1+\frac{k}{m})+\frac{1}{2} \ln \frac{ 2m }{ 2\pi(m^2-k^2) }  \newline
+&amp; = - \frac{2k^2}{m}+\frac{1}{2} \ln \frac{ 2m }{ 2\pi(m^2-k^2) }
+\end{align*}</p>
+
+<p>所以我们可以得到:</p>
+
+<p>$$P =\sqrt{\frac{1}{\pi m}} e^{-\frac{-2k^2}{m}}$$</p>
+
+<p>我们把上述的概率换算成一般的概率分布形式为:</p>
+
+<p>$$P(x) = \sqrt{\frac{2}{\pi n}} e^{-\frac{x^2}{n}}$$</p>
+
+<p>因此我们可以计算
+$$\lim_{n\rightarrow\infty} E(|S_n|) = \int |x|P dx = \sqrt{\frac{2n}{\pi}}$$</p>
               
             </div>
           </div>
