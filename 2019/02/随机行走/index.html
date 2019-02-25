@@ -440,6 +440,94 @@ if __name__ == &#39;__main__&#39;:
     </tbody>
   </table>
 </figure>
+
+<h1 id="随机行走的常返性">随机行走的常返性</h1>
+
+<p>在随机过程里面有这样一个段子, 喝醉酒的人总可以找到回家的路然而喝醉酒的小鸟却不一定可以找回回家的路. 实际上就是二维随机行走当行走的步数趋于无穷大的时候总是可以回到原点, 然而三维的随机行走却不一定可以回到原点. 这里我们以一维随机行走为例, 说明常返性的由来.</p>
+
+<p>首先我们用数学的语言描述什么是常返性, 也即为:</p>
+
+<p>$$\lim_{n\rightarrow \infty} P(S_0 \neq 0 ,S_2 \neq 0,&hellip;,S_{2n} \neq 0) = 0$$</p>
+
+<p>实际上我们只需要证明上式成立即可. 这里我们不妨考虑其反面, 先求出刚好$2m$次回到原点的概率, 这也就意味着, $2m$次之前一定没有到达原点.</p>
+
+<h3 id="引理">引理</h3>
+
+<p>假设A, B两人竞选某个职位, 现在已知A的得票为$m$, B的得票为$n$, 其中$m&gt;n$, 假定唱票的顺序是完全随机的, 那么在此过程中, A的票数一直领先于B的概率是多少?</p>
+
+<p>这里可以使用递推的方式来解决, 最后一票可能是A, 也有可能是B, 那么所求的概率$P_n^m$即可以表达为:</p>
+
+<p>$$P_n^m =  \frac{n}{m+n} P_{n-1}^m + \frac{m}{m+n}P_{n}^{m-1}$$</p>
+
+<p>很明显:</p>
+
+<p>$P_1^{0} = 1, P_2^1 = \frac{1}{3}, P_3^1 = \frac{2}{4}, P_3^2 = \frac{1}{5} $
+可以看出$P_n^m = \frac{n-m}{n+m}$. 带入验证也是正确的. 下面就借助这个结果可以证明随机行走的常返性这一结论.</p>
+
+<p>由于我们假定刚好$2m$次回到原点, 也就说明前$2m-1$次中有$m$次向右, $m-1$次向左(不妨这样假设), 也就说明这$2m-1$次中向右的次数一直多于向左的次数, 其概率为$\frac{2}{2m-1}$, 分子为2是因为这里不知道是向左的次数多于还是少于向右的, 等概率的所以应该乘以2, 接着最后一步有$\frac{1}{2}$的概率向左或者向右, 所以在已知$m$次向左和向右的情况下, 最后一步刚好回到原点的概率为$\frac{1}{2m-1}$.</p>
+
+<p>所以我们可以得出, $2m$次行走刚刚好到达原点的概率为:</p>
+
+<p>$$P(S_0 \neq 0, S_2 \neq 0, &hellip;, S_{2m} = 0) = \frac{1}{2m-1}\frac{C_{2m}^{m}}{2^{2m}}$$
+为了方便我们可以记上式为$Q_m = \frac{1}{2m-1}\frac{C_{2m}^{m}}{2^{2m}}$</p>
+
+<p>那么最终我们只需要证明</p>
+
+<p>$$1 - \sum_{m=1}^{\infty}Q_m = 0$$</p>
+
+
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-"><code class="">from math import factorial as fac
+import matplotlib.pyplot as plt
+res = []
+s = 0
+for i in range(1,85):
+    s &#43;= 1/(2*i-1) * fac(2*i) / (fac(i))**2 / 2**(2*i)
+    res.append(s)
+plt.plot(range(1,85),res,&#39;o-&#39;)
+plt.xlabel(&#39;Times&#39;)
+plt.ylabel(&#39;Probability&#39;)</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
+
+<p>这一段代码也可以看出该概率是不断增长到1的, 下面可以证明这一结果. 实际上有这样一个神奇的结果:</p>
+
+<p>$$1 - \sum_{m=1}^{n}Q_m = \frac{C_{2n}^{n}}{2^{2n}} $$</p>
+
+<p>下面我们可以来证明这一点.</p>
+
+<p>首先 $n = 1$的时候是成立的, 假设$n = k$的时候也成立, 现在$n = k+1$, 那么只需要证明</p>
+
+<p>\begin{align*}
+\frac{C_{2k+2}^{k+1}}{(2k+1)2^{2k+2}} = \frac{C_{2k}^{k}}{2^{2k}} - \frac{C_{2k+2}^{k+1}}{2^{2k+2}}
+\end{align*}</p>
+
+<p>这是很容易验证的.所以我们可以得到, 前$2n$次都没有回到原点的概率为:</p>
+
+<p>\begin{align*}
+P &amp; = \frac{C_{2n}^{n}}{2^{2n}}  \sim \frac{1}{\sqrt{n\pi}}
+\end{align*}</p>
+
+<p>所以当$n\rightarrow \infty$的时候, 回到原点的概率为1.</p>
               
             </div>
           </div>
