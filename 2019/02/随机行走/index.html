@@ -441,7 +441,9 @@ if __name__ == &#39;__main__&#39;:
   </table>
 </figure>
 
-<h1 id="随机行走的常返性">随机行走的常返性</h1>
+<h1 id="随机行走中的一些概率计算">随机行走中的一些概率计算</h1>
+
+<h2 id="常返性">常返性</h2>
 
 <p>在随机过程里面有这样一个段子, 喝醉酒的人总可以找到回家的路然而喝醉酒的小鸟却不一定可以找回回家的路. 实际上就是二维随机行走当行走的步数趋于无穷大的时候总是可以回到原点, 然而三维的随机行走却不一定可以回到原点. 这里我们以一维随机行走为例, 说明常返性的由来.</p>
 
@@ -475,41 +477,7 @@ if __name__ == &#39;__main__&#39;:
 
 <p>$$1 - \sum_{m=1}^{\infty}Q_m = 0$$</p>
 
-
-  
-  
-  
-  
-
-
-<figure class="highlight  language-">
-  <figcaption>
-    
-  </figcaption>
-  <table>
-    <tbody>
-      <tr>
-        <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre>
-        </td>
-        <td class="code">
-          <pre class="code-highlight language-"><code class="">from math import factorial as fac
-import matplotlib.pyplot as plt
-res = []
-s = 0
-for i in range(1,85):
-    s &#43;= 1/(2*i-1) * fac(2*i) / (fac(i))**2 / 2**(2*i)
-    res.append(s)
-plt.plot(range(1,85),res,&#39;o-&#39;)
-plt.xlabel(&#39;Times&#39;)
-plt.ylabel(&#39;Probability&#39;)</code></pre>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-</figure>
-
-<p>这一段代码也可以看出该概率是不断增长到1的, 下面可以证明这一结果. 实际上有这样一个神奇的结果:</p>
+<p>下面可以证明这一结果. 实际上有这样一个神奇的结果:</p>
 
 <p>$$1 - \sum_{m=1}^{n}Q_m = \frac{C_{2n}^{n}}{2^{2n}} $$</p>
 
@@ -528,6 +496,50 @@ P &amp; = \frac{C_{2n}^{n}}{2^{2n}}  \sim \frac{1}{\sqrt{n\pi}}
 \end{align*}</p>
 
 <p>所以当$n\rightarrow \infty$的时候, 回到原点的概率为1.</p>
+
+<p>下面即为模拟一维随机行走常返性的代码:</p>
+
+
+  
+  
+  
+  
+
+
+<figure class="highlight  language-">
+  <figcaption>
+    
+  </figcaption>
+  <table>
+    <tbody>
+      <tr>
+        <td class="gutter">
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
+        </td>
+        <td class="code">
+          <pre class="code-highlight language-"><code class="">import numpy as np
+import matplotlib.pyplot as plt
+
+def return_origin(nstep):
+    s = 0
+    for ii in range(nstep):
+        if np.random.rand() &gt; 0.5:
+            s &#43;= 1
+        else:
+            s -= 1
+        if s == 0:
+            return True
+    return False
+
+if __name__ == &#39;__main__&#39;:
+    res = [1 if return_origin(100) else 0 for ii in range(1,10000)]
+    cumres = np.cumsum(res)
+    plt.plot(range(1,10000), cumres / range(1,10000))</code></pre>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</figure>
               
             </div>
           </div>
