@@ -381,16 +381,16 @@ E(S_n^{2}) &amp;= E\left(\left(\sum_{k=1}^{n} a_k\right)^2 \right) \newline
 
 <p>\begin{align*}
 \ln P &amp;= - (m-k) \ln(1-\frac{k}{m}) - (m+k) \ln(1+\frac{k}{m})+\frac{1}{2} \ln \frac{ 2m }{ 2\pi(m^2-k^2) }  \newline
-&amp; = - \frac{2k^2}{m}+\frac{1}{2} \ln \frac{ 2m }{ 2\pi(m^2-k^2) }
+&amp; = - \frac{k^2}{m}+\frac{1}{2} \ln \frac{ 2m }{ 2\pi(m^2-k^2) }
 \end{align*}</p>
 
 <p>所以我们可以得到:</p>
 
-<p>$$P =\sqrt{\frac{1}{\pi m}} e^{-\frac{-2k^2}{m}}$$</p>
+<p>$$P(m, k) =\sqrt{\frac{1}{\pi m}} e^{-\frac{-k^2}{m}}$$</p>
 
 <p>我们把上述的概率换算成一般的概率分布形式为:</p>
 
-<p>$$P(x) = \sqrt{\frac{ 2 }{\pi n}} e^{-\frac{x^2}{n}}$$</p>
+<p>$$P(x) = \sqrt{\frac{ 1 }{\pi n}} e^{-\frac{x^2}{n}}$$</p>
 
 <p>因此我们可以计算
 $$\lim_{n\rightarrow\infty} E(|S_n|) = \int |x|P dx = \sqrt{\frac{2n}{\pi}}$$</p>
@@ -441,6 +441,10 @@ if __name__ == &#39;__main__&#39;:
     </tbody>
   </table>
 </figure>
+
+<p>可以看到分布是服从正态分布的.</p>
+
+<p><img src="https://raw.githubusercontent.com/ChangChunHe/Sundries/master/rand-walk-distribution.png?token=Af0jpbMNjkX9dtwfE4nVjWC67_0zfFMOks5ce5n3wA%3D%3D" alt="" /></p>
 
 <h1 id="随机行走中的一些概率计算">随机行走中的一些概率计算</h1>
 
@@ -500,7 +504,7 @@ P &amp; = \frac{C_{2n}^{n}}{2^{2n}}  \sim \frac{1}{\sqrt{n\pi}}
 
 <p>下面即为模拟一维随机行走常返性的代码:</p>
 
-
+<p>
   
   
   
@@ -515,7 +519,7 @@ P &amp; = \frac{C_{2n}^{n}}{2^{2n}}  \sim \frac{1}{\sqrt{n\pi}}
     <tbody>
       <tr>
         <td class="gutter">
-          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre>
+          <pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre>
         </td>
         <td class="code">
           <pre class="code-highlight language-"><code class="">import numpy as np
@@ -533,16 +537,18 @@ def return_origin(nstep):
     return False
 
 if __name__ == &#39;__main__&#39;:
-    res = [1 if return_origin(100) else 0 for ii in range(1,10000)]
-    cumres = np.cumsum(res)
-    plt.plot(range(1,10000), cumres / range(1,10000))</code></pre>
+    final_res = [[1 if return_origin(ii) else 0 for idx in range(10000)] for ii in range(10,1000)]
+    final_res = np.array(final_res)
+    res = np.sum(final_res,axis=1)
+    plt.plot(range(10,1000),res)</code></pre>
         </td>
       </tr>
     </tbody>
   </table>
 </figure>
+下图是返回的次数与行走的步数的关系, 可以看到是符合根号$n$的关系的.</p>
 
-<h2 id="从一维到多维">从一维到多维</h2>
+<p><img src="https://raw.githubusercontent.com/ChangChunHe/Sundries/master/rand-walk-return-rate.png" alt="" /></p>
               
             </div>
           </div>
