@@ -6,7 +6,7 @@
     <description>Recent content on Hugo tranquilpeak theme</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 13 Mar 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://changchunhe.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Welcome to My Blog</title>
       <link>https://changchunhe.github.io/2019/03/welcome-to-my-blog/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 13 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://changchunhe.github.io/2019/03/welcome-to-my-blog/</guid>
       <description>&lt;p&gt;My personal blog based on the &lt;a href=&#34;https://gohugo.io/&#34;&gt;hugo&lt;/a&gt; theme &lt;a href=&#34;https://themes.gohugo.io/hugo-tranquilpeak-theme&#34;&gt;Tranquilpeak&lt;/a&gt;, whose author is &lt;a href=&#34;https://github.com/kakawait&#34;&gt;kakawait&lt;/a&gt;.&lt;/p&gt;</description>
@@ -26,7 +26,7 @@
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://changchunhe.github.io/2019/03/%E6%9C%89%E5%85%B3%E5%9C%86%E5%91%A8%E7%8E%87%E7%9A%84%E7%A2%B0%E6%92%9E%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;光滑的地面上有两个静止的小木块, 离墙近的质量为1Kg, 离墙远的质量为nkg,
+      <description>&lt;p&gt;光滑的地面上有两个静止的小木块, 离墙近的质量为$1$Kg, 离墙远的质量为$n$kg,
 现给重的木块一定的速度使其向墙壁方向运动, 假设所有的碰撞都是弹性碰撞,
 那么木块之间的碰撞次数和与墙壁之间的碰撞次数是多少? 这里可以给出这样的数据.&lt;/p&gt;
 

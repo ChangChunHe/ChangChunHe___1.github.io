@@ -4,7 +4,7 @@
   
   <url>
     <loc>https://changchunhe.github.io/2019/03/welcome-to-my-blog/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -34,8 +34,20 @@
   </url>
   
   <url>
+    <loc>https://changchunhe.github.io/tags/book/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://changchunhe.github.io/categories/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://changchunhe.github.io/tags/comment/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -47,13 +59,13 @@
   
   <url>
     <loc>https://changchunhe.github.io/tags/hugo-theme/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://changchunhe.github.io/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -64,14 +76,14 @@
   </url>
   
   <url>
-    <loc>https://changchunhe.github.io/tags/movie-book-comment/</loc>
+    <loc>https://changchunhe.github.io/tags/movie/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://changchunhe.github.io/post/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -89,13 +101,13 @@
   
   <url>
     <loc>https://changchunhe.github.io/tags/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://changchunhe.github.io/categories/tranquilpeak/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2019-03-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
