@@ -8,19 +8,45 @@
 <meta name="generator" content="Hugo 0.54.0 with theme Tranquilpeak 0.4.3-SNAPSHOT">
 <meta name="author" content="ChangChunHe">
 <meta name="keywords" content="">
-<meta name="description" content="Hugo tranquilpeak theme demo">
+<meta name="description" content="1734年Euler给出了Basel 问题的解答, 也就是所有正整数的平方的倒数和:
+$$\sum_{i=1}^{\infty}\frac{1}{i^2} = \frac{\pi^2}{6}$$
+相信很多人会对这个等式很着迷的, 一个相当漂亮的等式, 当时Euler给出的证明其实并不完全严谨, 当然也无伤大雅, 而且对于所有的偶数次方都是有解析解的, 跟伯努力数有关, 这里就不展开讲了. 一般的高数书会用Fourier transform来证明这个等式, 也有其他的例如 帕塞瓦尔恒等式, 留数定理, 柯西还给过一个初等的证明, 维基百科都有记录.这里介绍一种几何方法的证明. 证明原文来自这里.">
 
 
-<meta property="og:description" content="Hugo tranquilpeak theme demo">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Movie">
-<meta name="twitter:title" content="Movie">
-<meta property="og:url" content="https://changchunhe.github.io/tags/movie/">
-<meta property="twitter:url" content="https://changchunhe.github.io/tags/movie/">
+<meta property="og:description" content="1734年Euler给出了Basel 问题的解答, 也就是所有正整数的平方的倒数和:
+$$\sum_{i=1}^{\infty}\frac{1}{i^2} = \frac{\pi^2}{6}$$
+相信很多人会对这个等式很着迷的, 一个相当漂亮的等式, 当时Euler给出的证明其实并不完全严谨, 当然也无伤大雅, 而且对于所有的偶数次方都是有解析解的, 跟伯努力数有关, 这里就不展开讲了. 一般的高数书会用Fourier transform来证明这个等式, 也有其他的例如 帕塞瓦尔恒等式, 留数定理, 柯西还给过一个初等的证明, 维基百科都有记录.这里介绍一种几何方法的证明. 证明原文来自这里.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Basel问题和圆周率的关系">
+<meta name="twitter:title" content="Basel问题和圆周率的关系">
+<meta property="og:url" content="https://changchunhe.github.io/2019/04/basel%E9%97%AE%E9%A2%98%E5%92%8C%E5%9C%86%E5%91%A8%E7%8E%87%E7%9A%84%E5%85%B3%E7%B3%BB/">
+<meta property="twitter:url" content="https://changchunhe.github.io/2019/04/basel%E9%97%AE%E9%A2%98%E5%92%8C%E5%9C%86%E5%91%A8%E7%8E%87%E7%9A%84%E5%85%B3%E7%B3%BB/">
 <meta property="og:site_name" content="花草茶好惆怅呀">
-<meta property="og:description" content="Hugo tranquilpeak theme demo">
-<meta name="twitter:description" content="Hugo tranquilpeak theme demo">
+<meta property="og:description" content="1734年Euler给出了Basel 问题的解答, 也就是所有正整数的平方的倒数和:
+$$\sum_{i=1}^{\infty}\frac{1}{i^2} = \frac{\pi^2}{6}$$
+相信很多人会对这个等式很着迷的, 一个相当漂亮的等式, 当时Euler给出的证明其实并不完全严谨, 当然也无伤大雅, 而且对于所有的偶数次方都是有解析解的, 跟伯努力数有关, 这里就不展开讲了. 一般的高数书会用Fourier transform来证明这个等式, 也有其他的例如 帕塞瓦尔恒等式, 留数定理, 柯西还给过一个初等的证明, 维基百科都有记录.这里介绍一种几何方法的证明. 证明原文来自这里.">
+<meta name="twitter:description" content="1734年Euler给出了Basel 问题的解答, 也就是所有正整数的平方的倒数和:
+$$\sum_{i=1}^{\infty}\frac{1}{i^2} = \frac{\pi^2}{6}$$
+相信很多人会对这个等式很着迷的, 一个相当漂亮的等式, 当时Euler给出的证明其实并不完全严谨, 当然也无伤大雅, 而且对于所有的偶数次方都是有解析解的, 跟伯努力数有关, 这里就不展开讲了. 一般的高数书会用Fourier transform来证明这个等式, 也有其他的例如 帕塞瓦尔恒等式, 留数定理, 柯西还给过一个初等的证明, 维基百科都有记录.这里介绍一种几何方法的证明. 证明原文来自这里.">
 <meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2019-04-20T00:00:00">
+  
+  
+    <meta property="article:modified_time" content="2019-04-20T00:00:00">
+  
+  
+  
+    
+      <meta property="article:section" content="Analysis, Geometry">
+    
+  
+  
+    
+      <meta property="article:tag" content="Mathematics">
+    
+  
 
 
 <meta name="twitter:card" content="summary">
@@ -39,16 +65,14 @@
   <meta property="twitter:image" content="https://raw.githubusercontent.com/ChangChunHe/Sundries/master/webwxgeticon.jpeg">
 
 
-    <title>Movie</title>
+    <title>Basel问题和圆周率的关系</title>
 
     <link rel="icon" href="https://raw.githubusercontent.com/ChangChunHe/Sundries/master/favicon-32x32.png">
     
-      <link rel="alternate" type="application/rss+xml" title="RSS" href="https://changchunhe.github.io/tags/movie/index.xml">
-    
 
     
 
-    <link rel="canonical" href="https://changchunhe.github.io/tags/movie/">
+    <link rel="canonical" href="https://changchunhe.github.io/2019/04/basel%E9%97%AE%E9%A2%98%E5%92%8C%E5%9C%86%E5%91%A8%E7%8E%87%E7%9A%84%E5%85%B3%E7%B3%BB/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -97,7 +121,7 @@
 
   <body>
     <div id="blog">
-      <header id="header" data-behavior="1">
+      <header id="header" data-behavior="4">
 <script type="text/javascript" src="http://tajs.qq.com/stats?sId=66185716" charset="UTF-8"></script>
   <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
   <div class="header-title">
@@ -147,7 +171,7 @@
 
 </header>
 
-      <nav id="sidebar" data-behavior="1">
+      <nav id="sidebar" data-behavior="4">
   <div class="sidebar-container">
     
       <div class="sidebar-profile">
@@ -266,44 +290,26 @@
 </nav>
 
       
-        
 
-      
-      <div id="main" data-behavior="1"
+      <div id="main" data-behavior="4"
         class="
                hasCoverMetaIn
                ">
-        
-          <section class="postShorten-group main-content-wrap">
-            
-            
-              
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
   
-    
-      
-        
-      
-    
+    <h1 class="post-title" itemprop="headline">
+      Basel问题和圆周率的关系
+    </h1>
   
-
-
   
-
-<article class="postShorten postShorten--thumbnailimg-bottom" itemscope itemType="http://schema.org/BlogPosting">
-  <div class="postShorten-wrap">
-    
-    <div class="postShorten-header">
-      <h1 class="postShorten-title" itemprop="headline">
-        <a class="link-unstyled" href="https://changchunhe.github.io/2019/03/%E5%BD%B1%E8%AF%84%E5%92%8C%E4%B9%A6%E8%AF%84/">
-          影评和书评
-        </a>
-      </h1>
-      
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2019-03-18T00:00:00Z">
+      <time itemprop="datePublished" datetime="2019-04-20T00:00:00Z">
         
-  March 18, 2019
+  April 20, 2019
 
       </time>
     
@@ -312,31 +318,113 @@
   
     <span>in</span>
     
-      <a class="category-link" href="https://changchunhe.github.io/categories/life">life</a>
+      <a class="category-link" href="https://changchunhe.github.io/categories/analysis-geometry">Analysis, Geometry</a>
     
   
 
   </div>
 
-    </div>
-    <div class="postShorten-excerpt" itemprop="articleBody">
-      
-        <p>这里我会分享我自己看的电影和书的一些感想.</p>
-      
-      <p>
-        <a href="https://changchunhe.github.io/2019/03/%E5%BD%B1%E8%AF%84%E5%92%8C%E4%B9%A6%E8%AF%84/" class="postShorten-excerpt_link link">Continue reading</a>
-        
-      </p>
-    </div>
-  </div>
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>1734年Euler给出了Basel 问题的解答, 也就是所有正整数的平方的倒数和:</p>
+
+<p>$$\sum_{i=1}^{\infty}\frac{1}{i^2} = \frac{\pi^2}{6}$$</p>
+
+<p>相信很多人会对这个等式很着迷的, 一个相当漂亮的等式, 当时Euler给出的证明其实并不完全严谨, 当然也无伤大雅, 而且对于所有的偶数次方都是有解析解的, 跟<a href="https://en.wikipedia.org/wiki/Bernoulli_number">伯努力数</a>有关, 这里就不展开讲了. 一般的高数书会用Fourier transform来证明这个等式, 也有其他的例如
+帕塞瓦尔恒等式, 留数定理, 柯西还给过一个初等的证明, <a href="https://en.wikipedia.org/wiki/Basel_problem">维基百科</a>都有记录.这里介绍一种几何方法的证明. 证明原文来自<a href="http://www.math.chalmers.se/~wastlund/Cosmic.pdf">这里</a>.</p>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://changchunhe.github.io/tags/mathematics/">Mathematics</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
   
-</article>
-
-            
-            
-
-          </section>
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://changchunhe.github.io/2019/04/welcome-to-my-blog/" data-tooltip="Welcome to My Blog">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://changchunhe.github.io/2019/04/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%E5%92%8C%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E7%9A%84%E5%85%B3%E7%B3%BB/" data-tooltip="中心极限定理和卷积定理的关系">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
         
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+                <div id="disqus_thread"></div>
+<script>
+
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://https-changchunhe-github-io.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+              
+            
+          </div>
+        </article>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
     &copy; 2019 ChangChunHe. All Rights Reserved
@@ -373,6 +461,66 @@
 </footer>
 
       </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://changchunhe.github.io/2019/04/welcome-to-my-blog/" data-tooltip="Welcome to My Blog">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">NEXT</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://changchunhe.github.io/2019/04/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%E5%92%8C%E5%8D%B7%E7%A7%AF%E5%AE%9A%E7%90%86%E7%9A%84%E5%85%B3%E7%B3%BB/" data-tooltip="中心极限定理和卷积定理的关系">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">PREVIOUS</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+        <li class="post-action">
+          <a class="post-action-btn btn btn--default" href="#disqus_thread">
+            <i class="fa fa-comment-o"></i>
+          </a>
+        </li>
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
     </div>
     
     <div id="about">
@@ -599,6 +747,32 @@ $(document).ready(function() {
 });
 </script>
 
+
+  
+    
+      <script>
+        var disqus_config = function () {
+          this.page.url = 'https:\/\/changchunhe.github.io\/2019\/04\/basel%E9%97%AE%E9%A2%98%E5%92%8C%E5%9C%86%E5%91%A8%E7%8E%87%E7%9A%84%E5%85%B3%E7%B3%BB\/';
+          
+            this.page.identifier = '\/2019\/04\/basel%E9%97%AE%E9%A2%98%E5%92%8C%E5%9C%86%E5%91%A8%E7%8E%87%E7%9A%84%E5%85%B3%E7%B3%BB\/'
+          
+        };
+        (function() {
+          
+          
+          if (window.location.hostname == "localhost") {
+            return;
+          }
+          var d = document, s = d.createElement('script');
+          var disqus_shortname = 'https-changchunhe-github-io';
+          s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
+      </script>
+    
+  
 
 
 
