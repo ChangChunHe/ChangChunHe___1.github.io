@@ -6,42 +6,15 @@
     <description>Recent content in Tags on 得失随缘, 心无增减</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Mar 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 19 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://changchunhe.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Book</title>
-      <link>https://changchunhe.github.io/tags/book/</link>
-      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://changchunhe.github.io/tags/book/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Comment</title>
-      <link>https://changchunhe.github.io/tags/comment/</link>
-      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://changchunhe.github.io/tags/comment/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Conservation</title>
-      <link>https://changchunhe.github.io/tags/conservation/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://changchunhe.github.io/tags/conservation/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo Theme</title>
+      <title>hugo theme</title>
       <link>https://changchunhe.github.io/tags/hugo-theme/</link>
-      <pubDate>Wed, 01 May 2019 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 19 May 2019 00:00:00 +0000</pubDate>
       
       <guid>https://changchunhe.github.io/tags/hugo-theme/</guid>
       <description></description>
@@ -57,11 +30,38 @@
     </item>
     
     <item>
-      <title>Movie</title>
+      <title>book</title>
+      <link>https://changchunhe.github.io/tags/book/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://changchunhe.github.io/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>comment</title>
+      <link>https://changchunhe.github.io/tags/comment/</link>
+      <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://changchunhe.github.io/tags/comment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>movie</title>
       <link>https://changchunhe.github.io/tags/movie/</link>
       <pubDate>Mon, 18 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>https://changchunhe.github.io/tags/movie/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>conservation</title>
+      <link>https://changchunhe.github.io/tags/conservation/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://changchunhe.github.io/tags/conservation/</guid>
       <description></description>
     </item>
     
